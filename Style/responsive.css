@@ -1,0 +1,15 @@
+@media (max-width: 900px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu li a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+
+    }
+}
