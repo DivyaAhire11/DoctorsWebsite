@@ -1,0 +1,192 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+.header {
+    background: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 30px;
+    box-shadow: inset 0 0 0 2000px rgba(0, 105, 111, 0.6);
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-img {
+    transform: scale(1.05);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00bcd4, #009688);
+    color: white;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -35px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover .icon {
+    transform: scale(1.1) rotate(10deg);
+    background: linear-gradient(135deg, #009688, #006d6f);
+}
+
+.card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.5rem;
+    color: #006d6f;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    text-align: center;
+    padding: 0 15px 20px;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .services {
+        gap: 25px;
+    }
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    background: #f4fbfb;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #067777;
+    margin-bottom: 50px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-left: 5px solid #0aa6a6;
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.testimonial h4 {
+    color: #067777;
+    font-weight: 600;
+}
+
+/* CTA */
+.cta {
+    background: #0aa6a6;
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 25px;
+    background: white;
+    color: #0aa6a6;
+    padding: 14px 35px;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .service-row,
+    .service-row.reverse {
+        flex-direction: column;
+    }
+
+    .service-row img,
+    .service-info {
+        width: 100%;
+    }
+}

@@ -1,0 +1,170 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #0d6b6b;
+     padding-top: 70px;
+}
+
+/* Header */
+.doctor-header {
+    background: url('../../images/Profiles/doctors-team.png') center center / cover no-repeat;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.doctor-header .overlay {
+    background: rgba(69, 147, 172, 0.3);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    /* padding: 40px; */
+    height: 100%;
+    width: 100%;
+ 
+}
+
+.doctor-header h1 {
+    font-size: 3rem;
+}
+
+.doctor-header p {
+    font-size: 1.2rem;
+}
+
+.doctors-title {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.doctors-title h2 {
+    font-size: 2.4rem;
+    color: #0d6b6b;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.doctors-title p {
+    font-size: 1.05rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Doctors Section */
+.doctors-section {
+    padding: 50px 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Doctor Card */
+.doctor-card {
+    background: #f4f4f4;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Doctor Image */
+.doctor-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #0d6b6b;
+}
+
+/* Doctor Info */
+.doctor-info h2 {
+    margin-bottom: 5px;
+}
+
+.doctor-info .specialization {
+    font-weight: 500;
+    color: #0d6b6b;
+}
+
+.doctor-info .experience,
+.doctor-info .availability {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Buttons */
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin: 5px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.profile-btn {
+    background: #ffffff;
+    border: 2px solid #0d6b6b;
+    color: #0d6b6b;
+}
+
+.profile-btn:hover {
+    background: #0d6b6b;
+    color: #ffffff;
+}
+/* Doctor Actions (Buttons Wrapper) */
+.doctor-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;          /* space BETWEEN buttons */
+    margin-top: 15px;
+    flex-wrap: wrap;    /* prevents overlap on small screens */
+}
+
+.appointment-btn {
+    background: #0d6b6b;
+    color: #ffffff;
+}
+@media (max-width: 480px) {
+    .doctor-actions {
+        flex-direction: column;
+    }
+}
+
+.appointment-btn:hover {
+    background: #084848;
+}
+
+/* Social Icons */
+.doctor-social a {
+    color: #0d6b6b;
+    margin: 0 5px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.doctor-social a:hover {
+    color: #084848;
+}

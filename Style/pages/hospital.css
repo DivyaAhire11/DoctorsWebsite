@@ -1,0 +1,131 @@
+/* Container */
+.hospital-container {
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+/* Hero Section */
+.hospital-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80")
+              center/cover no-repeat;
+  /* height: 320px; */
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text h1 {
+  color: #fff;
+  font-size: 42px;
+}
+
+.hero-text p {
+  color: #ddd;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* About Section */
+.hospital-about {
+  display: flex;
+  gap: 40px;
+  padding: 60px 10%;
+  align-items: center;
+}
+
+.hospital-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.hospital-info h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.hospital-info p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Importance Section */
+.hospital-importance {
+  background: #f7f9fc;
+  padding: 50px 10%;
+}
+
+.hospital-importance h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.hospital-importance ul {
+  max-width: 700px;
+  margin: auto;
+  list-style: none;
+}
+
+.hospital-importance li {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.hospital-importance i {
+  color: #2a9df4;
+  margin-right: 10px;
+}
+
+/* CTA Section */
+.hospital-cta {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hospital-cta h2 {
+  font-size: 28px;
+}
+
+.hospital-cta p {
+  margin: 15px 0 25px;
+}
+
+.cta-button {
+  background: #2a9df4;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: #1c7fd6;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  padding: 20px;
+  text-align: center;
+}
+
+.breadcrumb a {
+  color: #2a9df4;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hospital-about {
+    flex-direction: column;
+    text-align: center;
+  }
+}
