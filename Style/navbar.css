@@ -1,18 +1,21 @@
-
 .navbar {
     position: fixed;
     top: 0;
     height: 70px;
     width: 100%;
     /* background-color: #006d77; */
-      /* background: linear-gradient(135deg, #006d77 0%, #00897b 100%); */
-      background: linear-gradient(135deg, #024248 0%, #006d62 100%);
+    /* background: linear-gradient(135deg, #006d77 0%, #00897b 100%); */
+    background: linear-gradient(135deg, #024248 0%, #006d62 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+}
+
+.navbar .logo svg {
+    vertical-align: middle;
 }
 
 .logo {
@@ -24,6 +27,11 @@
 .logo span {
     /* color: #ffd43b; */
     color: #6fffe9;
+}
+
+#menuIcon {
+    display: none;
+    cursor: pointer;
 }
 
 .menu {
@@ -49,66 +57,114 @@
 
 
 
-.btn-primary {
-    /* background-color: #0d6efd; */
-    /* background-color: #42a2d1; */
-    background-color:#183836;;
-    color: #ffffff;
-    padding: 12px 22px;
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
     border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    /* transition: 0.3s; */
+    color: #fff;
+    z-index: 9999;
+    font-weight: 500;
 }
 
-.btn-primary:hover {
-    /* background-color: #12695f; */
-    background-color: #115d58;
+.toast.success {
+    background-color: #28a745;
 }
 
-.lines {
-    display: none;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
+.toast.error {
+    background-color: #dc3545;
 }
 
-@media screen and (max-width:768px) {
-
-    /*space between and , ( */
-    .lines {
+/* Responsive for mobile */
+@media screen and (max-width: 768px) {
+    #menuIcon {
         display: block;
-        /* show icon */
     }
 
     .menu {
-        display: none;
-        /* hide menu initially */
-        position: fixed;
-        /* top: 70px; */
-        top: 70px;
-        right: 5px;
-        width: 160px;
-        padding-bottom: 10px;
-        /* height: 100vh; */
-        background-color: #006d77;
-        flex-direction: column;
         position: absolute;
-        /* padding: 40px 20px; */
-        /* gap: 20px; */
-        /* transition: right 0.3s ease; */
-        /* z-index: 999; */
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
-
     .menu.active {
-        display: flex; 
-        margin-top: 2px;
-        height: 350px;
-        justify-content: space-evenly;
-        background-color: #0d2121;
-        border: 2px solid #757575;
-     
+        display: flex;
+    }
+
+    .menu li {
+        padding: 10px 20px;
     }
 
 }
+    .btn-primary {
+        /* background-color: #0d6efd; */
+        /* background-color: #42a2d1; */
+        background-color: #183836;
+        
+        color: #ffffff;
+        padding: 12px 22px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        /* transition: 0.3s; */
+    }
+
+    .btn-primary:hover {
+        /* background-color: #12695f; */
+        background-color: #115d58;
+    }
+
+    .lines {
+        display: none;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width:768px) {
+
+        /*space between and , ( */
+        .lines {
+            display: block;
+            /* show icon */
+        }
+
+        .menu {
+            display: none;
+            /* hide menu initially */
+            position: fixed;
+            /* top: 70px; */
+            top: 70px;
+            right: 5px;
+            width: 160px;
+            padding-bottom: 10px;
+            /* height: 100vh; */
+            background-color: #006d77;
+            flex-direction: column;
+            position: absolute;
+            /* padding: 40px 20px; */
+            /* gap: 20px; */
+            /* transition: right 0.3s ease; */
+            /* z-index: 999; */
+        }
+
+
+        .menu.active {
+            display: flex;
+            margin-top: 2px;
+            height: 350px;
+            justify-content: space-evenly;
+            background-color: #0d2121;
+            border: 2px solid #757575;
+
+        }
+
+    }

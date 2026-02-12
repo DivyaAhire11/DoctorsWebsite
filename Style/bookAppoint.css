@@ -141,3 +141,48 @@
          display: none;
      }
  }
+  .booking-layout {
+         display: flex;
+         gap: 2rem;
+         flex-wrap: wrap;
+      }
+
+      .booking-form {
+         flex: 2;
+      }
+
+      .booking-summary {
+         flex: 1;
+         min-width: 250px;
+         background-color: #f9f9f9;
+         padding: 1rem;
+         border-radius: 8px;
+         border: 1px solid #ddd;
+      }
+
+      .booking-summary img {
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         object-fit: cover;
+         margin-right: 10px;
+      }
+
+      .toast {
+         position: fixed;
+         top: 20px;
+         right: 20px;
+         padding: 12px 20px;
+         border-radius: 6px;
+         color: #fff;
+         z-index: 9999;
+         font-weight: 500;
+      }
+
+      .toast.success {
+         background-color: #28a745;
+      }
+
+      .toast.error {
+         background-color: #dc3545;
+      }
