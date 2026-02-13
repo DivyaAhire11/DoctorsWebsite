@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include "../../config/db.php";
 
 
@@ -68,9 +68,13 @@ pg_close($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="../../Style/pages/login.css">
+    <link rel="stylesheet" href="../../Style/navbar.css">
+
 </head>
 
 <body>
+    <?php include "../../Includes/navbar.php"; ?>
+
     <div class="login-container">
         <div class="login-box">
             <h2>Register Account</h2>

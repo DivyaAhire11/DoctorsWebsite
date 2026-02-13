@@ -1,5 +1,4 @@
 <?php
-
 include "../../config/db.php";
 
 ?>
@@ -12,11 +11,13 @@ include "../../config/db.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Clinic</title>
     <link rel="stylesheet" href="../../Style/pages/login.css">
+    <link rel="stylesheet" href="../../Style/navbar.css">
 </head>
 
 <body>
    
-   
+   <?php include "../../Includes/navbar.php"; ?>
+
     <div class="login-container">
         <div class="login-box">
             <h2>Patient Login</h2>
@@ -49,9 +50,10 @@ include "../../config/db.php";
                 </p>
 
             </form>
+
+            
         </div>
     </div>
-
 </body>
 
 </html>

@@ -62,8 +62,7 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 12px 35px;
     color: #fff;
     z-index: 9999;
     font-weight: 500;
@@ -74,7 +73,7 @@
 }
 
 .toast.error {
-    background-color: #c51b2c;
+    background-color: #ff0000;
 }
 
 /* Responsive for mobile */

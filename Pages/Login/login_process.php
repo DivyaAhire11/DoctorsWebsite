@@ -42,18 +42,15 @@ if ($result && pg_num_rows($result) > 0) {
 
         header("Location: ../../index.php"); // change if needed
         exit();
-
     } else {
-        $_SESSION['toast'] = "Incorrect password!";
-        $_SESSION['toast_type'] = "error";
+         $_SESSION['toast'] = "Incorrect password!";
+         $_SESSION['toast_type'] = "error";
         header("Location: login.php");
         exit();
     }
-
 } else {
     $_SESSION['toast'] = "User not found!";
     $_SESSION['toast_type'] = "error";
     header("Location: ./login.php");
     exit();
 }
-?>
