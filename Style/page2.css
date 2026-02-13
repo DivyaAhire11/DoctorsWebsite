@@ -11,7 +11,6 @@
 
 .experts {
     text-align: center;
-    /* center text horizontally*/
     margin-bottom: 50px;
 }
 
@@ -25,66 +24,14 @@
 }
 
 .specialist {
-    /* min-height: 160vh; */
-    width: 95%;
+    width: 80%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 20px;
+    /* background: #000; */
 }
-
-/* .info-block.modern {
-    width: 360px;
-    min-height: 460px;
-    background: linear-gradient(145deg, #ffffff, #f3fefe);
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s ease;
-}
-
-.info-block.modern::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 109, 119, 0.15),
-        transparent 60%
-    );
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.info-block.modern:hover::before {
-    opacity: 1;
-}
-
-.info-block.modern:hover {
-    transform: translateY(-12px);
-}
-.profile-media {
-    width: 100%;
-    height: 220px;
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.profile-media img {
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    transition: transform 0.5s ease;
-}
-
-.info-block.modern:hover img {
-    transform: scale(1.08);
-} */
 
 
 /* Doctor card */
@@ -94,14 +41,13 @@
     border-radius: 25px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 .doctor-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
@@ -112,27 +58,14 @@
     filter: brightness(0.75);
 }
 
-.doctor-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 60%, rgba(0, 109, 119, 0.85) 100%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.doctor-card:hover::after {
-    opacity: 1;
-}
-
 .doctor-name {
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
     padding: 15px 10px;
-    color: #fff;
-    font-size: 1.1rem;
+    color: #00282f;
+    font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     opacity: 0;
@@ -160,75 +93,17 @@
         height: 220px;
         border-radius: 20px;
     }
-}
-
-.info-text h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #004f55;
-}
-
-.info-text h4 {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: #00897b;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.info-text .tags span {
-    background: rgba(0, 109, 119, 0.1);
-    backdrop-filter: blur(6px);
-    border-radius: 30px;
-    padding: 6px 14px;
-    font-size: 0.75rem;
-    border: none;
-}
-
-.info-text .tags span:hover {
-    background: linear-gradient(135deg, #006d77, #00897b);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 109, 119, 0.3);
-}
-
-.info-text h3 {
-    font-size: 1.2rem;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    color: #006d77;
-    font-weight: 600;
-}
-
-.info-text p {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-    .specialist {
-        gap: 20px;
-    }
-
-    .info-block {
-        width: 90%;
-        max-width: 360px;
-    }
 
     .collaboration img {
         width: 100%;
         max-width: 320px;
+        flex-wrap: wrap;
     }
 }
 
 .show-more-btn {
     text-align: center;
     margin: 40px 0;
-    color: #00575f;
-    text-decoration: none;
 }
 
 .show-more-btn a {
@@ -240,7 +115,12 @@
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
-    transition: all 0.3s ease;
+}
+
+.show-more-btn a:hover {
+    background-color: #004e5535;
+    border: 2px solid #006d77;
+    color: #000000;
 }
 
 .call-action-section {
@@ -289,6 +169,7 @@
 .collaboration {
     margin-top: 60px;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     max-width: 1100px;
     width: 90%;
@@ -297,7 +178,6 @@
 }
 
 .collaboration img {
-    /* width: 100%; */
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -313,33 +193,33 @@
 
 
 
-@media screen and (max-width:900px) {
-    .info-block img {
-        width: 250px;
+@media (max-width: 480px) {
+
+    .experts h2 {
+        font-size: 1.6rem;
     }
 
-    .info-text .tags span {
-        margin: 5px;
+    .call-action-content h2 {
+        font-size: 1.8rem;
     }
 
-    .collaboration {
-        flex-wrap: wrap;
+    .doctor-card {
+        width: 100%;
+        height: 250px;
+    }
+
+    .collaboration img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .call-action-section {
+        padding: 50px 20px;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .info-block {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .info-block img {
-        width: 100%;
-        max-width: 300px;
-        margin-right: 0;
-    }
-
-    .info-text {
-        width: 100%;
-    }
+.specialist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
 }

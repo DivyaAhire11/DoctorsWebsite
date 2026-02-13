@@ -18,10 +18,10 @@ session_start();
         <li><a href="/AppointMent/Appoint/Pages/Doctors/doctor.php">Doctors</a></li>
 
         <?php if (isset($_SESSION['username'])): ?>
-            <li><a href="/AppointMent/Appoint/Pages/bookAppoint.php">Book</a></li>
-            <li><a href="/AppointMent/Appoint/Pages/Login/logout.php">Logout</a></li>
+            <li><a href="/AppointMent/Appoint/Pages/bookAppoint.php" class="btn-primary">Book</a></li>
+            <li><a href="/AppointMent/Appoint/Pages/Login/logout.php" class="btn-primary">Logout</a></li>
         <?php else: ?>
-            <li><a href="/AppointMent/Appoint/Pages/Login/login.php">Login</a></li>
+            <li><a href="/AppointMent/Appoint/Pages/Login/login.php" class="btn-primary">Login</a></li>
         <?php endif; ?>
     </ul>
 

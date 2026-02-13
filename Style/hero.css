@@ -80,6 +80,7 @@
         text-align: center;
         padding: 40px 20px;
         margin-top: 70px;
+         width: 900px;
     }
 
     .hero-content {
@@ -93,5 +94,10 @@
 
     .hero-buttons {
         justify-content: center;
+    }
+}
+@media (max-width : 400px) {
+    .hero{
+        width:400px ;
     }
 }

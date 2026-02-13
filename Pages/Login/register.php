@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     //    4. INSERT USER
     $insertQuery = pg_query_params(
         $con,
-        "INSERT INTO users (username, email, password) 
+        "INSERT INTO users (name, email, password) 
          VALUES ($1, $2, $3)",
         [$username, $email, $hashedPassword]
     );

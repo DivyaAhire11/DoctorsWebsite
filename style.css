@@ -26,25 +26,6 @@ body {
     width: 100%;
     background-color: #ffffff;
 }
-.toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 15px 25px;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 9999;
-    animation: fadeOut 4s forwards;
-}
-
-.toast.success {
-    background-color: #28a745;
-}
-
-.toast.error {
-    background-color: #dc3545;
-}
 
 @keyframes fadeOut {
     0% {opacity: 1;}

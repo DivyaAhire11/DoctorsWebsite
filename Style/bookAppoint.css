@@ -1,188 +1,173 @@
+.book-appointment {
+    min-height: 100vh;
+    max-width: 60vw;
+    margin: 0px auto;
+    background-image: url("../images/bgImg.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+}
 
- .book-appointment {
-     min-height: 100vh;
-     max-width: 60vw;
-     margin: 0px auto;
-     background-image: url("../images/bgImg.svg");
-     background-size: cover;
-     background-position: center;
-     background-repeat: no-repeat;
-     position: relative;
-     padding: 30px;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-     border-radius: 10px;
-     font-family: 'Poppins', sans-serif;
- }
+.book-content {
+    /* width: 0vw; */
+    display: flex;
+    gap: 30px;
+    align-items: center;
 
- .book-content {
-     /* width: 0vw; */
-     display: flex;
-     gap: 30px;
-     align-items: center;
+}
 
- }
-
- .book-content form {
-     flex: 1;
-     display: flex;
-     flex-direction: column;
-     padding: 25px;
-     border-radius: 10px;
- }
-
-
- .book-img {
-     flex: 1;
- }
-
- .book-img img {
-     width: 100%;
-     /* width: 300px; */
-     height: 80vh;
-     border-radius: 10px;
-     object-fit: cover;
+.book-content form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+}
 
 
- }
+.book-img {
+    flex: 1;
+}
 
- /*
+.book-img img {
+    width: 100%;
+    /* width: 300px; */
+    height: 80vh;
+    border-radius: 10px;
+    object-fit: cover;
+
+
+}
+
+/*
  .book-appointment h2 {
      text-align: center;
      /* margin-bottom: 20px; */
- /* color: #333; 
+/* color: #333; 
      /* color: #13163c; 
      color: #133c39;
      letter-spacing: 1px;
  }*/
- .book-appointment h2 {
-     text-align: center;
-     text-transform: capitalize;
-     font-size: 2rem;
-     letter-spacing: 1px;
-     color: #004e55;
- }
+.book-appointment h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    color: #004e55;
+}
 
 
 
- /* Form  */
- .book-appointment form {
-     display: flex;
-     flex-direction: column;
-     /* position: absolute; */
-     z-index: 111;
- }
+/* Form  */
+.book-appointment form {
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    z-index: 111;
+}
 
- /* Labels  */
- .book-appointment label {
-     margin: 10px 0 5px;
-     /* font-weight: 600;  */
-     font-weight: bold;
-     color: #555;
- }
+/* Labels  */
+.book-appointment label {
+    margin: 10px 0 5px;
+    /* font-weight: 600;  */
+    font-weight: bold;
+    color: #555;
+}
 
- /* Inputs & Select  */
- .book-appointment input,
- .book-appointment select {
-     padding: 10px;
-     border-radius: 5px;
-     border: 0.5px solid #ccc;
-     font-size: 14px;
- }
+/* Inputs & Select  */
+.book-appointment input,
+.book-appointment select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    font-size: 14px;
+}
 
- .book-appointment input:focus,
- .book-appointment select:focus {
-     border-color: #2c7be5;
-     outline: none;
- }
+.book-appointment input:focus,
+.book-appointment select:focus {
+    border-color: #2c7be5;
+    outline: none;
+}
 
- /* Button  */
- .book-appointment button {
-     margin-top: 20px;
-     padding: 12px;
-     /* background: #2c7be5; */
-     background-color: #133c39;
-     color: white;
-     border: none;
-     border-radius: 6px;
-     font-size: 16px;
-     cursor: pointer;
-     /* transition: background 0.3s; */
- }
+/* Button  */
+.book-appointment button {
+    margin-top: 20px;
+    padding: 12px;
+    /* background: #2c7be5; */
+    background-color: #133c39;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    /* transition: background 0.3s; */
+}
 
- .book-appointment button:hover {
-     /* background: #1a5dc9; */
-     background-color: #115d58;
+.book-appointment button:hover {
+    /* background: #1a5dc9; */
+    background-color: #115d58;
 
- }
-@media (max-width: 768px) {
+}
+
+@media screen and (max-width:768px) {
     .book-content {
         flex-direction: column;
     }
-
+    .book-appointment form{
+        width: 100%;
+    }
     .book-img img {
-        height: 300px;
+        display: none;
     }
 }
 
- /* Responsive  */
- @media (max-width: 600px) {
-     .book-appointment {
-         margin: 30px 15px;
-         padding: 20px;
-     }
- }
+.booking-layout {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
 
- @media screen and (max-width:768px) {
-     .book-content {
-         flex-direction: column;
-     }
+.booking-form {
+    flex: 2;
+}
 
-     .book-img img {
-         display: none;
-     }
- }
-  .booking-layout {
-         display: flex;
-         gap: 2rem;
-         flex-wrap: wrap;
-      }
+.booking-summary {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
 
-      .booking-form {
-         flex: 2;
-      }
+.booking-summary img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
 
-      .booking-summary {
-         flex: 1;
-         min-width: 250px;
-         background-color: #f9f9f9;
-         padding: 1rem;
-         border-radius: 8px;
-         border: 1px solid #ddd;
-      }
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: #fff;
+    z-index: 9999;
+    font-weight: 500;
+}
 
-      .booking-summary img {
-         width: 60px;
-         height: 60px;
-         border-radius: 50%;
-         object-fit: cover;
-         margin-right: 10px;
-      }
+.toast.success {
+    background-color: #28a745;
+}
 
-      .toast {
-         position: fixed;
-         top: 20px;
-         right: 20px;
-         padding: 12px 20px;
-         border-radius: 6px;
-         color: #fff;
-         z-index: 9999;
-         font-weight: 500;
-      }
-
-      .toast.success {
-         background-color: #28a745;
-      }
-
-      .toast.error {
-         background-color: #dc3545;
-      }
+.toast.error {
+    background-color: #dc3545;
+}

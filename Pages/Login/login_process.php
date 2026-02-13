@@ -11,13 +11,20 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 
-$result = pg_prepare($con, "login_query", 
-    "SELECT id, name, email, password 
-     FROM users 
-     WHERE email = $1"
+// $result = pg_prepare($con, "login_query", 
+//     "SELECT id, name, email, password 
+//      FROM users 
+//      WHERE email = $1"
+// );
+$result = pg_query_params(
+    $con,
+    "SELECT id, name, email, password FROM users WHERE email = $1",
+    array($email)
 );
 
-$result = pg_execute($con, "login_query", array($email));
+
+
+// $result = pg_execute($con, "login_query", array($email));
 
 if ($result && pg_num_rows($result) > 0) {
 
@@ -33,13 +40,13 @@ if ($result && pg_num_rows($result) > 0) {
         $_SESSION['toast'] = "Login successful!";
         $_SESSION['toast_type'] = "success";
 
-        header("Location: ./../../index.php"); // change if needed
+        header("Location: ../../index.php"); // change if needed
         exit();
 
     } else {
         $_SESSION['toast'] = "Incorrect password!";
         $_SESSION['toast_type'] = "error";
-        header("Location: ./login.php");
+        header("Location: login.php");
         exit();
     }
 

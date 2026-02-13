@@ -86,7 +86,7 @@
         </a>
 
         <!-- Orthopedic -->
-        <a href="Orthopedi.php" class="card">
+        <a href="Orthopedic.php" class="card">
             <img src="../../images/Doctors/orthopedic.png"
                 alt="Orthopedic Care" class="card-img">
             <div class="icon"><i class="fas fa-bone"></i></div>
