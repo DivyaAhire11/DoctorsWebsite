@@ -92,7 +92,7 @@
 
   <!-- Footer Navigation -->
   <nav class="breadcrumb">
-    <a href="services.php">← Back to Services</a>
+    <a href="services.php"><i class="fa-solid fa-arrow-left"></i>Back to Services</a>
   </nav>
 
 </main>

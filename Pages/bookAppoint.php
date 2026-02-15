@@ -2,6 +2,8 @@
 session_start();
 include "../config/db.php";
 
+
+
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['toast'] = "Please login first to book appointment.";
     $_SESSION['toast_type'] = "error";
@@ -22,6 +24,8 @@ if (!$doctors) {
 <head>
     <title>Book Appointment</title>
     <link rel="stylesheet" href="../Style/bookAppoint.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -73,7 +77,11 @@ if (!$doctors) {
                 <button type="submit" name="submit">Confirm Booking</button>
 
             </form>
+
         </div>
+        <span class="back">
+            <a href="../index.php"><i class="fa-solid fa-arrow-left"></i> &nbsp;Go Back</a>
+        </span>
     </div>
 </body>
 

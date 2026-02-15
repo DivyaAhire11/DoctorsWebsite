@@ -2,12 +2,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctors Page</title>
-    <link rel="stylesheet" href="Style/page2.css"> <!-- Link your CSS file -->
+    <link rel="stylesheet" href="Style/page2.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
     <section class="page2">
     <div class="experts">
-        <h2>Our Specialists</h2>
+        <h2><i class="fa-solid fa-graduation-cap"></i>&nbsp;highly qualified team</h2>
         <p>Meet our experienced and trusted medical professionals</p>
     </div>
     
@@ -45,7 +47,7 @@
 
 
     <div class="show-more-btn">
-        <a href="/AppointMent/Appoint/Pages/Doctors/doctor.php">View All Doctors </a>
+        <a href="/AppointMent/Appoint/Pages/Doctors/doctor.php">View All Doctors &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
     </div>
     <section class="call-action-section">
         <div class="call-action-content">

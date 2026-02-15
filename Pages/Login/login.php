@@ -13,13 +13,17 @@ include "../../config/db.php";
     <title>Login - Clinic</title>
     <link rel="stylesheet" href="../../Style/pages/login.css">
     <link rel="stylesheet" href="../../Style/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-  <?php include "../../Includes/navbar.php"; ?>
+    <?php include "../../Includes/navbar.php"; ?>
     <div class="login-container">
         <div class="login-box">
+            <span class="back">
+                <a href="../../index.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </span>
             <h2>Patient Login</h2>
 
             <form action="./login_process.php" method="POST">
@@ -51,9 +55,9 @@ include "../../config/db.php";
 
             </form>
 
-            
         </div>
     </div>
+
 </body>
 
 </html>

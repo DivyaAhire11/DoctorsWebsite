@@ -69,13 +69,16 @@ pg_close($con);
     <title>Register</title>
     <link rel="stylesheet" href="../../Style/pages/login.css">
     <link rel="stylesheet" href="../../Style/navbar.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
     <?php include "../../Includes/navbar.php"; ?>
     <div class="login-container">
         <div class="login-box">
+            <span class="back">
+                <a href="../../index.php"><i class="fa-solid fa-arrow-left"></i></a>
+            </span>
             <h2>Patient Registration</h2>
 
             <form method="POST">

@@ -171,3 +171,9 @@
 .toast.error {
     background-color: #dc3545;
 }
+
+.back a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}

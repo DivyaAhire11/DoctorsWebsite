@@ -25,6 +25,9 @@ body {
     margin-bottom: 30px;
     color: #006d77;
 }
+.back a{
+    text-decoration: none;
+}
 
 .input-group {
     margin-bottom: 20px;
