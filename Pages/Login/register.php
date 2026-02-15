@@ -77,7 +77,7 @@ pg_close($con);
     <div class="login-container">
         <div class="login-box">
             <span class="back">
-                <a href="../../index.php"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="./login.php"><i class="fa-solid fa-arrow-left"></i></a>
             </span>
             <h2>Patient Registration</h2>
 
@@ -110,6 +110,10 @@ pg_close($con);
                 </div>
 
                 <button type="submit">Register</button>
+                <p>
+                    Already have an account? 
+                    <a href="./login.php">Login here</a>
+                </p>
             </form>
 </body>
 
