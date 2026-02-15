@@ -1,6 +1,10 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <nav class="navbar">
     <div class="logo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -26,26 +30,46 @@ session_start();
     </ul>
 
     <?php if (isset($_SESSION['toast'])): ?>
-         <div class="toast <?php echo $_SESSION['toast_type']; ?>">
-            <?php
-            echo $_SESSION['toast'];
-            unset($_SESSION['toast']);
-            unset($_SESSION['toast_type']);
-            ?>
-        </div> 
+        <div class="toast <?php echo $_SESSION['toast_type']; ?>">
+            <span>
+                <?php
+                echo $_SESSION['toast'];
+                unset($_SESSION['toast']);
+                unset($_SESSION['toast_type']);
+                ?>
+            </span>
+            <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+        </div>
     <?php endif; ?>
 </nav>
 
 <!-- Toast auto-hide JS -->
- <script>
-    setTimeout(() => {
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
         const toast = document.querySelector('.toast');
-        if(toast) toast.style.display = 'none';
-    }, 4000); // hide after 4 seconds
-</script> 
+
+        if (toast) {
+
+            const closeBtn = toast.querySelector('.close-btn');
+
+            // Auto hide after 4 seconds
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 4000);
+
+            // Hide when clicking X
+            closeBtn.addEventListener('click', function() {
+                toast.style.display = 'none';
+            });
+
+        }
+
+    });
+</script>
 
 <!-- Menu Toggle JS -->
- <script>
+<script>
     const menuIcon = document.getElementById('menuIcon');
     const menu = document.getElementById('menu');
 

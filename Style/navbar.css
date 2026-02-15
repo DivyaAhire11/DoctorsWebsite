@@ -3,9 +3,9 @@
     top: 0;
     height: 70px;
     width: 100%;
-    /* background-color: #006d77; */
+    /* background-color: #0e3133; */
     /* background: linear-gradient(135deg, #006d77 0%, #00897b 100%); */
-    background: linear-gradient(135deg, #024248 0%, #006d62 100%);
+    background: linear-gradient(135deg, #024248 0%, #006d62 100%); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +44,7 @@
 .menu li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 8px 14px;
     border-radius: 6px;
@@ -57,15 +57,19 @@
 
 
 
-
 .toast {
     position: fixed;
-    top: 20px;
+    /* bottom: 20px; */
+    min-width: 270px;
+    top: 30px;
     right: 20px;
-    padding: 12px 35px;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
     color: #fff;
     z-index: 9999;
     font-weight: 500;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .toast.success {
@@ -73,9 +77,19 @@
 }
 
 .toast.error {
-    background-color: #ff0000;
+    background-color: #dc3545;
+}
+.toast .close-btn {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    font-size: 16px;
+    transition: 0.3s ease;
 }
 
+.toast .close-btn:hover {
+    transform: scale(1.1);
+}
 /* Responsive for mobile */
 @media screen and (max-width: 768px) {
     #menuIcon {
@@ -109,15 +123,16 @@
         background-color: #183836;
         
         color: #ffffff;
-        padding: 12px 22px;
-        border-radius: 6px;
+        /* padding: 12px 22px; */
+         padding: 1rem 1.5rem;
+        border-radius: 8px;
         text-decoration: none;
         font-weight: 600;
         /* transition: 0.3s; */
     }
 
     .btn-primary:hover {
-        /* background-color: #12695f; */
+        /* background-color: #0a2421; */
         background-color: #115d58;
     }
 

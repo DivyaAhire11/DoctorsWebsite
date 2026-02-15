@@ -1,18 +1,18 @@
 <?php
-// session_start();
+session_start();
 include "../../config/db.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
-    $username = $_POST['username'];
+    $name = $_POST['name'];
     $email    = $_POST['email'];
     $password = $_POST['password'];
 
 
     // 1. VALIDATION
 
-    if (empty($username) || empty($email) || empty($password)) {
+    if (empty($name) || empty($email) || empty($password)) {
         $_SESSION['toast'] = "All fields are required!";
         $_SESSION['toast_type'] = "error";
         header("Location: register.php");
@@ -42,13 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $con,
         "INSERT INTO users (name, email, password) 
          VALUES ($1, $2, $3)",
-        [$username, $email, $hashedPassword]
+        [$name, $email, $hashedPassword]
     );
 
     if ($insertQuery) {
         $_SESSION['toast'] = "Registration successful! Please login.";
         $_SESSION['toast_type'] = "success";
-        header("Location: ./login.php");
+        header("Location: login.php");
         exit();
     } else {
         $_SESSION['toast'] = "Registration failed!";
@@ -74,16 +74,15 @@ pg_close($con);
 
 <body>
     <?php include "../../Includes/navbar.php"; ?>
-
     <div class="login-container">
         <div class="login-box">
-            <h2>Register Account</h2>
+            <h2>Patient Registration</h2>
 
             <form method="POST">
                 <div class="input-group">
                     <label for="email">Username</label>
                     <input type="text"
-                        name="username"
+                        name="name"
                         id="username"
                         placeholder="Enter your name"
                         required>

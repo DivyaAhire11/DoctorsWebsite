@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "../../config/db.php";
 
 ?>
@@ -15,9 +16,8 @@ include "../../config/db.php";
 </head>
 
 <body>
-   
-   <?php include "../../Includes/navbar.php"; ?>
 
+  <?php include "../../Includes/navbar.php"; ?>
     <div class="login-container">
         <div class="login-box">
             <h2>Patient Login</h2>
