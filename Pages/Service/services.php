@@ -24,7 +24,8 @@
     <div class="services">
         <!-- Hospital -->
         <a href="Hospital.php" class="card">
-            <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80"
+            <!-- <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80" -->
+            <img src="../../images/bgHospital.jpg"
                 alt="Hospital Services" class="card-img">
             <div class="icon"><i class="fas fa-hospital"></i></div>
             <h3>Hospital Services</h3>

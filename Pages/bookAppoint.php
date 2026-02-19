@@ -53,7 +53,7 @@ if (!$doctors) {
                     <option value="">-- Select Doctor --</option>
                     <?php while ($doc = pg_fetch_assoc($doctors)) { ?>
                         <option value="<?php echo $doc['id']; ?>">
-                            <?php echo $doc['name']; ?>
+                            <?php echo $doc['name'] . " (" . $doc['specialization'] . ")"; ?>
                         </option>
                     <?php } ?>
                 </select>

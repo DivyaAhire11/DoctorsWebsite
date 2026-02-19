@@ -18,7 +18,7 @@
             <h4>Quick Links</h4>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="Pages/Doctors/doctors.php">Our Doctors</a></li>
+                <li><a href="Pages/Doctors/doctor.php">Our Doctors</a></li>
                 <li><a href="Pages/Services/services.php">Services</a></li>
                 <li><a href="Pages/bookAppoint.php">Book Appointment</a></li>
                 <li><a href="#contact">Contact Us</a></li>

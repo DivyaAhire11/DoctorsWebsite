@@ -1,3 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents right scroll */
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -95,7 +107,6 @@
     #menuIcon {
         display: block;
     }
-
     .menu {
         position: absolute;
         top: 60px;

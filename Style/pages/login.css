@@ -1,23 +1,28 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #006d77, #009688);
+    /* background: linear-gradient(135deg, #006d77, #009688); */
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin: 0;
     /* margin: 0; */
 }
 
 .login-container {
+    margin-top: 80px;
+    min-height: calc(100vh - 70px);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    /* background: #000; */
 }
 
 .login-box {
     background: #fff;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    /* box-shadow: 0 20px 40px rgba(0,0,0,0.2); */
+    box-shadow: 0 20px 40px #056156;
 }
 
 .login-box h2 {

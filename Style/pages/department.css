@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -91,6 +91,15 @@ body {
   text-align: center;
 }
 
+.highlights div {
+  padding: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.highlights div:hover {
+  box-shadow: 0 0 15px rgba(15, 118, 110, 0.6);
+}
+
 .highlights span {
   display: block;
   font-size: 36px;
@@ -128,7 +137,6 @@ body {
   margin-bottom: 14px;
 }
 
-
 .details-icons .icon-item {
   display: flex;
   align-items: center;
@@ -162,9 +170,16 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
+
   .service-section,
   .details.with-icons .details-grid {
     grid-template-columns: 1fr;
+  }
+
+  .page-header h1 {
+    font-size: 27px;
+    letter-spacing: 1px;
+    flex-wrap: wrap;
   }
 
   .highlights {

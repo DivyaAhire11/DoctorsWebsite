@@ -1,15 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  
+  font-family: 'Poppins', sans-serif;
+
+}
 /* Container */
 .hospital-container {
   width: 100%;
-  font-family: 'Segoe UI', sans-serif;
   color: #333;
+  margin: 0;
 }
 
 /* Hero Section */
 .hospital-hero {
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80")
+              url("../../images/bgHospital.jpg")
               center/cover no-repeat;
+  /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80")
+              center/cover no-repeat; */
   /* height: 320px; */
   height: 400px;
   display: flex;

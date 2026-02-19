@@ -13,8 +13,9 @@
 </head>
 
 <body>
-
-<div class="hospital-container">
+  
+  <div class="hospital-container">
+  <?php include "../../Includes/navbar.php"; ?>
 
   <!-- HERO SECTION -->
   <section class="hospital-hero">
@@ -27,7 +28,8 @@
   <!-- IMAGE + INFO -->
   <section class="hospital-about">
     <div class="hospital-image">
-     <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80"
+     <!-- <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" -->
+     <img src="../../images/bgHospital.jpg"
      alt="Modern Hospital Building">
     </div>
 

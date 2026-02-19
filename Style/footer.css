@@ -100,4 +100,8 @@
         grid-template-columns: 1fr;
         text-align: center;
     }
+    .social-links{
+        text-align: center;
+        justify-content: center;
+    }
 }

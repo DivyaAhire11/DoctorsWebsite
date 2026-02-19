@@ -5,8 +5,8 @@
             Appointment<span>Online</span>
         </h1>
         <p>
-            Easily schedule appointment with trusted doctors.
-            Save time,avoid queues,and get quality healthcare.
+            Easily schedule appointment with trusted doctors
+            Save time, avoid queues, and receive quality healthcare from trusted professionals
         </p>
         <div class="hero-buttons">
             <a href="/AppointMent/Appoint/Pages/bookAppoint.php" class="btn-primary">Book Appointment</a>
