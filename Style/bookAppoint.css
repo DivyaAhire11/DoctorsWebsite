@@ -1,179 +1,267 @@
-.book-appointment {
-    min-height: 100vh;
-    max-width: 60vw;
-    margin: 0px auto;
-    background-image: url("../images/bgImg.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    padding: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+/* ===================================================
+   SMARTCARE — BOOK APPOINTMENT PAGE (Professional)
+   =================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.book-content {
-    /* width: 0vw; */
-    display: flex;
-    gap: 30px;
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: #f0f4f8;
+    color: #111827;
+}
+
+/* ---- Page Wrapper ---- */
+.book-page {
+    padding: 100px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- Page Header ---- */
+.book-header {
+    margin-bottom: 35px;
+}
+
+.back-link {
+    display: inline-flex;
     align-items: center;
-
+    gap: 7px;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: color 0.2s;
 }
 
-.book-content form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    border-radius: 10px;
+.back-link:hover {
+    color: #006d77;
 }
 
-
-.book-img {
-    flex: 1;
-}
-
-.book-img img {
-    width: 100%;
-    /* width: 300px; */
-    height: 80vh;
-    border-radius: 10px;
-    object-fit: cover;
-
-
-}
-
-/*
- .book-appointment h2 {
-     text-align: center;
-     /* margin-bottom: 20px; */
-/* color: #333; 
-     /* color: #13163c; 
-     color: #133c39;
-     letter-spacing: 1px;
- }*/
-.book-appointment h2 {
-    text-align: center;
-    text-transform: capitalize;
+.book-header h1 {
     font-size: 2rem;
-    letter-spacing: 1px;
-    color: #004e55;
+    font-weight: 800;
+    color: #0d1b2a;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
 }
 
+.book-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
 
+/* ---- Container (2-column) ---- */
+.book-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    align-items: start;
+}
 
-/* Form  */
-.book-appointment form {
+/* ---- Image / Info Panel ---- */
+.book-img-panel {
+    background: linear-gradient(145deg, #012b36 0%, #006d77 100%);
+    border-radius: 20px;
+    padding: 30px 25px;
+    color: white;
+    position: sticky;
+    top: 90px;
+}
+
+.book-img-panel img {
+    width: 100%;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-bottom: 25px;
+    max-height: 200px;
+}
+
+.book-info-cards {
     display: flex;
     flex-direction: column;
-    /* position: absolute; */
-    z-index: 111;
+    gap: 12px;
 }
 
-/* Labels  */
-.book-appointment label {
-    margin: 10px 0 5px;
-    /* font-weight: 600;  */
-    font-weight: bold;
-    color: #555;
-}
-
-/* Inputs & Select  */
-.book-appointment input,
-.book-appointment select {
-    padding: 10px;
-    border-radius: 5px;
-    border: 0.5px solid #ccc;
-    font-size: 14px;
-}
-
-.book-appointment input:focus,
-.book-appointment select:focus {
-    border-color: #2c7be5;
-    outline: none;
-}
-
-/* Button  */
-.book-appointment button {
-    margin-top: 20px;
-    padding: 12px;
-    /* background: #2c7be5; */
-    background-color: #133c39;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    /* transition: background 0.3s; */
-}
-
-.book-appointment button:hover {
-    /* background: #1a5dc9; */
-    background-color: #115d58;
-
-}
-
-@media screen and (max-width:768px) {
-    .book-content {
-        flex-direction: column;
-    }
-    .book-appointment form{
-        width: 100%;
-    }
-    .book-img img {
-        display: none;
-    }
-}
-
-.booking-layout {
+.info-card {
     display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.booking-form {
-    flex: 2;
-}
-
-.booking-summary {
-    flex: 1;
-    min-width: 250px;
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.booking-summary img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.toast {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    border-radius: 6px;
-    color: #fff;
-    z-index: 9999;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
-.toast.success {
-    background-color: #28a745;
+.info-card i {
+    color: #6fffe9;
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
 }
 
-.toast.error {
-    background-color: #dc3545;
+/* ---- Form Panel ---- */
+.book-form-panel {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.06);
 }
 
-.back a{
-    text-decoration: none;
-    color: black;
+/* ---- Form Groups ---- */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.85rem;
     font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+}
+
+.form-group label i {
+    color: #006d77;
+    font-size: 0.8rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #111827;
+    background: #f9fafb;
+    outline: none;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input[readonly] {
+    background: #f1f5f9;
+    color: #64748b;
+    cursor: not-allowed;
+    border-color: #e2e8f0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #006d77;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(0,109,119,0.08);
+}
+
+.form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%236b7280' d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 12px;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
+}
+
+/* ---- Submit Button ---- */
+.book-submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #006d77 0%, #00897b 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 4px 15px rgba(0,109,119,0.3);
+    margin-top: 5px;
+}
+
+.book-submit-btn:hover {
+    background: linear-gradient(135deg, #004f58 0%, #006f65 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,109,119,0.4);
+}
+
+.book-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+    .book-container {
+        grid-template-columns: 1fr;
+    }
+
+    .book-img-panel {
+        position: static;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .book-img-panel img {
+        width: 150px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .book-info-cards {
+        flex: 1;
+    }
+}
+
+@media (max-width: 640px) {
+    .book-page {
+        padding: 90px 20px 40px;
+    }
+
+    .book-form-panel {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .book-img-panel {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-img-panel img {
+        width: 100%;
+    }
+
+    .book-header h1 {
+        font-size: 1.5rem;
+    }
 }

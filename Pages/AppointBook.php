@@ -61,8 +61,8 @@ if ($result && pg_num_rows($result) > 0) {
    $appointmentId = $row['id'];
 
    // 5. NOTIFY DOCTOR
-   $notifyQuery = "INSERT INTO notifications (user_id, title, message, type) 
-                   SELECT user_id, 'New Appointment Booking', 
+   $notifyQuery = "INSERT INTO notifications (user_id, message, type) 
+                   SELECT user_id, 
                    'You have a new appointment request from ' || $1 || ' on ' || $2,
                    'appointment'
                    FROM doctors WHERE id = $3";
@@ -81,8 +81,8 @@ if ($result && pg_num_rows($result) > 0) {
    // Send confirmation email (non-fatal if it fails)
    try {
       sendAppointmentMail('book', $data);
-   } catch (Exception $e) {
-      // Mail failure should not block the user
+   } catch (\Throwable $e) {
+      // Catching \Throwable intercepts Class Not Found fatal errors natively in PHP 7+
    }
 ?>
 

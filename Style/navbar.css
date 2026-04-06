@@ -1,122 +1,207 @@
+/* ==============================================
+   SMARTCARE — NAVBAR (Professional Glassmorphism)
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* prevents right scroll */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
+/* ---- Navbar ---- */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     height: 70px;
     width: 100%;
-    /* background-color: #0e3133; */
-    /* background: linear-gradient(135deg, #006d77 0%, #00897b 100%); */
-    background: linear-gradient(135deg, #024248 0%, #006d62 100%); 
+    background: linear-gradient(135deg, #012b36 0%, #006d62 100%);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 60px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(111, 255, 233, 0.08);
+}
+
+/* ---- Logo ---- */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .navbar .logo svg {
     vertical-align: middle;
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-}
-
-.logo span {
-    /* color: #ffd43b; */
     color: #6fffe9;
 }
 
+.logo span {
+    color: #6fffe9;
+}
+
+/* ---- Hamburger Icon ---- */
 #menuIcon {
     display: none;
     cursor: pointer;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
 }
 
+/* ---- Menu ---- */
 .menu {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 6px;
 }
 
 .menu li a {
     text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
     font-weight: 500;
     padding: 8px 14px;
-    border-radius: 6px;
-    /* transition: all 0.3s ease; */
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    letter-spacing: 0.2px;
 }
 
 .menu li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
 }
 
+/* ---- CTA Button ---- */
+.btn-primary {
+    background: linear-gradient(135deg, #006d77, #00897b);
+    color: #ffffff !important;
+    padding: 9px 20px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,109,119,0.4);
+    border: none;
+}
 
+.btn-primary:hover {
+    background: linear-gradient(135deg, #004f58, #006f65) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0,109,119,0.4) !important;
+    background-color: unset !important;
+}
 
+/* ---- User Section (Logout) ---- */
+.btn-logout {
+    background: rgba(239, 68, 68, 0.12) !important;
+    color: #fca5a5 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    padding: 9px 16px !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: all 0.25s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(239, 68, 68, 0.25) !important;
+    color: #fff !important;
+    border-color: #ef4444 !important;
+    transform: none !important;
+}
+
+/* ---- Toast Notification ---- */
 .toast {
     position: fixed;
-    /* bottom: 20px; */
-    min-width: 270px;
-    top: 30px;
-    right: 20px;
-    border-radius: 8px;
-    padding: 1rem 1.5rem;
+    top: 82px;
+    right: 24px;
+    min-width: 280px;
+    max-width: 360px;
+    border-radius: 12px;
+    padding: 14px 18px;
     color: #fff;
     z-index: 9999;
     font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    animation: slideInToast 0.4s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+@keyframes slideInToast {
+    from { transform: translateX(100px); opacity: 0; }
+    to   { transform: translateX(0);     opacity: 1; }
 }
 
 .toast.success {
-    background-color: #28a745;
+    background: linear-gradient(135deg, #059669, #10b981);
 }
 
 .toast.error {
-    background-color: #dc3545;
+    background: linear-gradient(135deg, #dc2626, #ef4444);
 }
+
 .toast .close-btn {
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    font-size: 16px;
-    transition: 0.3s ease;
+    font-size: 1rem;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
 }
 
 .toast .close-btn:hover {
-    transform: scale(1.1);
+    opacity: 1;
 }
-/* Responsive for mobile */
+
+/* ---- Responsive (Mobile) ---- */
 @media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
     #menuIcon {
         display: block;
     }
+
     .menu {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        flex-direction: column;
-        width: 200px;
         display: none;
-        padding: 10px 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        background: linear-gradient(145deg, #012b36, #006d62);
+        flex-direction: column;
+        padding: 15px 10px;
+        gap: 4px;
+        box-shadow: -4px 4px 20px rgba(0,0,0,0.3);
+        border-left: 1px solid rgba(111,255,233,0.1);
+        border-bottom: 1px solid rgba(111,255,233,0.1);
+        border-radius: 0 0 0 16px;
     }
 
     .menu.active {
@@ -124,72 +209,18 @@ body {
     }
 
     .menu li {
-        padding: 10px 20px;
+        width: 100%;
     }
 
-}
-    .btn-primary {
-        /* background-color: #0d6efd; */
-        /* background-color: #42a2d1; */
-        background-color: #183836;
-        
-        color: #ffffff;
-        /* padding: 12px 22px; */
-         padding: 1rem 1.5rem;
+    .menu li a {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 16px;
         border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        /* transition: 0.3s; */
     }
 
-    .btn-primary:hover {
-        /* background-color: #0a2421; */
-        background-color: #115d58;
+    .btn-primary {
+        text-align: center !important;
     }
-
-    .lines {
-        display: none;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    @media screen and (max-width:768px) {
-
-        /*space between and , ( */
-        .lines {
-            display: block;
-            /* show icon */
-        }
-
-        .menu {
-            display: none;
-            /* hide menu initially */
-            position: fixed;
-            /* top: 70px; */
-            top: 70px;
-            right: 5px;
-            width: 160px;
-            padding-bottom: 10px;
-            /* height: 100vh; */
-            background-color: #006d77;
-            flex-direction: column;
-            position: absolute;
-            /* padding: 40px 20px; */
-            /* gap: 20px; */
-            /* transition: right 0.3s ease; */
-            /* z-index: 999; */
-        }
-
-
-        .menu.active {
-            display: flex;
-            margin-top: 2px;
-            height: 350px;
-            justify-content: space-evenly;
-            background-color: #0d2121;
-            border: 2px solid #757575;
-
-        }
-
-    }
+}

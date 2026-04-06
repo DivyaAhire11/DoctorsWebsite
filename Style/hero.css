@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +9,8 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 .hero {
@@ -44,9 +47,11 @@ body {
 
 .hero-content h1 {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 800;
     color: #042b35;
     line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 15px rgba(255,255,255,0.4);
 }
 
 .hero-content h1 span {
@@ -55,9 +60,11 @@ body {
 
 .hero-content p {
     margin: 20px 0;
-    font-size: 1.15rem;
-    color: #012730;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #0a3540;
+    line-height: 1.7;
+    max-width: 500px;
+    font-weight: 450;
 }
 
 /* Buttons */
