@@ -1,4 +1,5 @@
-/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,16 +7,16 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
     background: #ffffff;
     color: #0d6b6b;
-     padding-top: 70px;
+    padding-top: 70px;
+     font-family: 'Poppins', sans-serif;
 }
 
 /* Header */
 .doctor-header {
     background: url('../../images/Profiles/doctors-team.png') center center / cover no-repeat;
-    height: 400px;
+    height: 500px;
     position: relative;
     display: flex;
     align-items: center;
@@ -27,17 +28,25 @@ body {
     background: rgba(69, 147, 172, 0.3);
     color: rgb(255, 255, 255);
     text-align: center;
+    padding: 40px 20px;
     /* padding: 40px; */
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
  
 }
 
 .doctor-header h1 {
+    position: absolute;
+    bottom: 25%;
     font-size: 3rem;
 }
 
 .doctor-header p {
+    position: absolute;
+    bottom: 20%;
     font-size: 1.2rem;
 }
 

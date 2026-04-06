@@ -38,10 +38,11 @@ body {
 }
 
 .services {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
-  display: flex;
-  flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* display: flex;
+    flex-wrap: wrap;
+    width: 350px; */
     gap: 40px;
     max-width: 1400px;
     margin: 80px auto;
@@ -53,7 +54,7 @@ body {
     background: white;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     color: #333;
     display: flex;
@@ -65,7 +66,7 @@ body {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .card-img {
@@ -90,7 +91,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: -35px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, background 0.3s;
 }
 
@@ -185,6 +186,7 @@ body {
 
 /* RESPONSIVE */
 @media(max-width: 900px) {
+
     .service-row,
     .service-row.reverse {
         flex-direction: column;
