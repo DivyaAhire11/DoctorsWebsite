@@ -16,9 +16,11 @@ if ($statusFilter) {
 }
 
 $appoints = pg_query_params($con,
-    "SELECT a.id, d.name AS doctor_name, d.specialization, a.appoint_date, a.appoint_time, a.status, a.reason
+    "SELECT a.id, d.name AS doctor_name, d.specialization, a.appoint_date, a.appoint_time, a.status, a.reason,
+            p.id AS rx_id, p.medicines, p.pdf_path
      FROM appointments a
      LEFT JOIN doctors d ON a.doctor_id = d.id
+     LEFT JOIN prescriptions p ON a.id = p.appointment_id
      $where ORDER BY a.appoint_date DESC",
     $params);
 ?>
@@ -99,8 +101,7 @@ $appoints = pg_query_params($con,
                     <tbody>
                     <?php if ($appoints && pg_num_rows($appoints) > 0):
                         $i = 1;
-                        while ($row = pg_fetch_assoc($appoints)):
-                    ?>
+                        while ($row = pg_fetch_assoc($appoints)) { ?>
                         <tr>
                             <td style="color:var(--text-light)"><?= $i++ ?></td>
                             <td style="font-weight:600"><?= htmlspecialchars($row['doctor_name'] ?? 'N/A') ?></td>
@@ -116,12 +117,21 @@ $appoints = pg_query_params($con,
                                 <a href="/AppointMent/Appoint/Pages/Cancel.php?id=<?= $row['id'] ?>"
                                    class="btn-action btn-danger-sm"
                                    onclick="return confirm('Cancel this appointment?')"><i class="fa-solid fa-times"></i> Cancel</a>
-                                <?php else: ?>
+                                <?php endif; ?>
+                                
+                                <?php if ($row['rx_id']): ?>
+                                <button class="btn-action" style="background:#8b5cf6;color:white;border:none;padding:5px 10px;border-radius:4px;font-size:12px;cursor:pointer;" onclick="alert('Medicines:\n<?= addslashes(htmlspecialchars_decode($row['medicines'])) ?>')"><i class="fa-solid fa-pills"></i> Notes</button>
+                                <?php if ($row['pdf_path']): ?>
+                                <a href="../../uploads/prescriptions/<?= htmlspecialchars($row['pdf_path']) ?>" target="_blank" class="btn-action" style="background:#2563eb;color:white;text-decoration:none;padding:5px 10px;border-radius:4px;font-size:12px;"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+                                <?php endif; ?>
+                                <?php endif; ?>
+                                
+                                <?php if (!in_array($row['status'], ['pending','confirmed']) && empty($row['rx_id'])): ?>
                                 <span style="color:var(--text-light);font-size:0.78rem">—</span>
                                 <?php endif; ?>
                             </td>
                         </tr>
-                    <?php endwhile; else: ?>
+                    <?php } else: ?>
                         <tr><td colspan="8">
                             <div class="empty-state">
                                 <i class="fa-solid fa-calendar-xmark"></i>

@@ -60,6 +60,7 @@ $appoints = pg_query_params($con,
         <a href="appointments.php" class="nav-item active"><i class="fa-solid fa-calendar-check"></i><span>Appointments</span></a>
         <a href="patients.php" class="nav-item"><i class="fa-solid fa-users"></i><span>Patients</span></a>
         <a href="schedule.php" class="nav-item"><i class="fa-solid fa-clock"></i><span>My Schedule</span></a>
+        <a href="prescriptions_list.php" class="nav-item"><i class="fa-solid fa-pills"></i><span>Prescriptions</span></a>
         <a href="/AppointMent/Appoint/Pages/Login/logout.php" class="nav-item" style="color:#fca5a5"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
     </nav>
     <div class="sidebar-footer">
@@ -106,7 +107,12 @@ $appoints = pg_query_params($con,
                                     <form method="POST" style="display:inline"><input type="hidden" name="appoint_id" value="<?= $row['id'] ?>"><input type="hidden" name="action" value="reject"><button class="btn-action btn-danger-sm" type="submit"><i class="fa-solid fa-times"></i> Reject</button></form>
                                 </div>
                             <?php elseif ($row['status']==='confirmed'): ?>
-                                <form method="POST" style="display:inline"><input type="hidden" name="appoint_id" value="<?= $row['id'] ?>"><input type="hidden" name="action" value="complete"><button class="btn-action btn-info-sm" type="submit"><i class="fa-solid fa-flag-checkered"></i> Complete</button></form>
+                                <div style="display:flex;gap:5px;flex-wrap:wrap">
+                                    <form method="POST" style="display:inline"><input type="hidden" name="appoint_id" value="<?= $row['id'] ?>"><input type="hidden" name="action" value="complete"><button class="btn-action btn-info-sm" type="submit"><i class="fa-solid fa-flag-checkered"></i> Complete</button></form>
+                                    <a href="add_prescription.php?id=<?= $row['id'] ?>" class="btn-action" style="background:#8b5cf6;color:white;text-decoration:none;padding:5px 10px;border-radius:4px;font-size:12px;font-weight:600;"><i class="fa-solid fa-prescription"></i> Add Rx</a>
+                                </div>
+                            <?php elseif ($row['status']==='completed'): ?>
+                                <a href="add_prescription.php?id=<?= $row['id'] ?>" class="btn-action" style="background:#8b5cf6;color:white;text-decoration:none;padding:5px 10px;border-radius:4px;font-size:12px;font-weight:600;"><i class="fa-solid fa-prescription"></i> Write Rx</a>
                             <?php else: ?>
                                 <span style="color:var(--text-light);font-size:0.78rem">—</span>
                             <?php endif; ?>

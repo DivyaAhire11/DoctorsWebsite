@@ -74,13 +74,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 "UPDATE appointments
                 SET appoint_date = $1,
                     appoint_time = $2,
-                    status = 'rescheduled'
+                    status = 'pending'
                 WHERE id = $3
                 AND status != 'cancelled'",
                 [$new_date, $new_time, $id]
             );
 
             if ($result) {
+                // NOTIFY DOCTOR
+                $notifyQuery = "INSERT INTO notifications (receiver_id, receiver_role, type, message)
+                                SELECT d.user_id, 'doctor', 'reschedule',
+                                'Appointment #' || $1 || ' has been rescheduled to ' || $2 || ' ' || $3
+                                FROM appointments a
+                                JOIN doctors d ON a.doctor_id = d.id
+                                WHERE a.id = $1 AND d.user_id IS NOT NULL";
+                @pg_query_params($con, $notifyQuery, [$id, date('d M Y', strtotime($new_date)), $new_time]);
                 // send mail
                 sendAppointmentMail('reschedule', [
                     'email' => $_SESSION['email'],

@@ -61,12 +61,11 @@ if ($result && pg_num_rows($result) > 0) {
    $appointmentId = $row['id'];
 
    // 5. NOTIFY DOCTOR
-   $notifyQuery = "INSERT INTO notifications (user_id, message, type) 
-                   SELECT user_id, 
-                   'You have a new appointment request from ' || $1 || ' on ' || $2,
-                   'appointment'
-                   FROM doctors WHERE id = $3";
-   pg_query_params($con, $notifyQuery, [$name, date('d M', strtotime($date)), $doctorId]);
+   $notifyQuery = "INSERT INTO notifications (receiver_id, receiver_role, type, message) 
+                   SELECT user_id, 'doctor', 'booking',
+                   'You have a new appointment request from ' || $1 || ' on ' || $2
+                   FROM doctors WHERE id = $3 AND user_id IS NOT NULL";
+   @pg_query_params($con, $notifyQuery, [$name, date('d M Y', strtotime($date)), $doctorId]);
 
    $data = [
       'name'    => $name,

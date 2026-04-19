@@ -34,7 +34,13 @@ $notifs = pg_query_params($con,
 $notifCount = $notifs ? pg_num_rows($notifs) : 0;
 
 // Doctors list for search
-$doctors = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHERE status='approved' ORDER BY name");
+// Doctors list — try fetching photo column, fallback if column doesn't exist
+$doctorsResult = pg_query($con, "SELECT id, name, specialization, fee, photo FROM doctors WHERE status='approved' ORDER BY name");
+if (!$doctorsResult) {
+    // photo column may not exist yet — fetch without it
+    $doctorsResult = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHERE status='approved' ORDER BY name");
+}
+$doctors = $doctorsResult;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,13 +144,13 @@ $doctors = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHE
     </nav>
 
     <div class="sidebar-footer">
-        <div class="sidebar-user">
+        <a href="profile.php" class="sidebar-user" style="text-decoration:none;cursor:pointer;transition:background 0.2s;" title="Go to my profile">
             <div class="user-avatar"><?= strtoupper(substr($userName, 0, 1)) ?></div>
             <div class="user-info">
                 <div class="user-name"><?= htmlspecialchars($userName) ?></div>
-                <div class="user-role">Patient</div>
+                <div class="user-role">Patient &nbsp;<i class="fa-solid fa-arrow-right" style="font-size:0.65rem;opacity:0.6"></i></div>
             </div>
-        </div>
+        </a>
     </div>
 </aside>
 
@@ -164,10 +170,10 @@ $doctors = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHE
                 <span class="notif-badge"><?= $notifCount ?></span>
             </a>
             <?php endif; ?>
-            <a href="profile.php" class="topbar-btn" title="Profile">
+            <a href="profile.php" class="topbar-btn" title="View Profile">
                 <i class="fa-solid fa-circle-user"></i>
             </a>
-            <div class="topbar-avatar"><?= strtoupper(substr($userName, 0, 1)) ?></div>
+            <a href="profile.php" class="topbar-avatar" title="<?= htmlspecialchars($userName) ?>" style="text-decoration:none;"><?= strtoupper(substr($userName, 0, 1)) ?></a>
         </div>
     </header>
 
@@ -334,14 +340,36 @@ $doctors = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHE
                     pg_result_seek($doctors, 0);
                     while ($doc = pg_fetch_assoc($doctors)):
                     ?>
-                    <div class="doctor-mini-card" data-name="<?= strtolower($doc['name']) ?>" data-spec="<?= htmlspecialchars($doc['specialization']) ?>">
-                        <div class="doc-avatar"><?= strtoupper(substr($doc['name'], 3, 1)) ?></div>
-                        <h4><?= htmlspecialchars($doc['name']) ?></h4>
+                    <?php
+                    // Strip leading "Dr." prefix for initials
+                    $dName    = $doc['name'] ?? '';
+                    $dClean   = preg_replace('/^Dr\.?\s+/i', '', $dName);
+                    $dInitial = strtoupper(substr($dClean, 0, 1));
+                    $dPhoto   = $doc['photo'] ?? '';
+                    $dFee     = (int)($doc['fee'] ?? 0);
+                    // Assign a colour per specialization for variety
+                    $colours  = ['#006d77','#0f766e','#1e40af','#7c3aed','#b45309','#be185d','#047857'];
+                    $dColor   = $colours[abs(crc32($doc['specialization'])) % count($colours)];
+                    ?>
+                    <div class="doctor-mini-card" data-name="<?= strtolower($dName) ?>" data-spec="<?= htmlspecialchars($doc['specialization']) ?>">
+                        <?php if ($dPhoto && file_exists($_SERVER['DOCUMENT_ROOT'] . $dPhoto)): ?>
+                            <img src="<?= htmlspecialchars($dPhoto) ?>" alt="Dr. <?= htmlspecialchars($dClean) ?>"
+                                 style="width:56px;height:56px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:2px solid #e2e8f0;">
+                        <?php else: ?>
+                            <div class="doc-avatar" style="background:linear-gradient(135deg,<?= $dColor ?>,<?= $dColor ?>cc)"><?= $dInitial ?></div>
+                        <?php endif; ?>
+                        <h4><?= htmlspecialchars($dName) ?></h4>
                         <p><?= htmlspecialchars($doc['specialization']) ?></p>
-                        <div class="fee">₹<?= number_format($doc['fee']) ?> / visit</div>
+                        <div class="fee">
+                            <?php if ($dFee > 0): ?>
+                                ₹<?= number_format($dFee) ?> <span style="font-weight:400;color:#94a3b8">/ visit</span>
+                            <?php else: ?>
+                                <span style="color:#94a3b8">Fee not set</span>
+                            <?php endif; ?>
+                        </div>
                         <a href="/AppointMent/Appoint/Pages/bookAppoint.php?doctor=<?= $doc['id'] ?>"
-                           class="btn-action btn-primary-sm" style="justify-content:center;width:100%">
-                            Book Now
+                           class="btn-action btn-primary-sm" style="justify-content:center;width:100%;margin-top:4px">
+                            <i class="fa-solid fa-calendar-plus"></i> Book Now
                         </a>
                     </div>
                     <?php endwhile; ?>

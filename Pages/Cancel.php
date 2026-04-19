@@ -60,6 +60,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             );
 
             if ($result) {
+                // NOTIFY DOCTOR
+                $notifyQuery = "INSERT INTO notifications (receiver_id, receiver_role, type, message)
+                                SELECT d.user_id, 'doctor', 'cancel',
+                                'Appointment #' || $1 || ' has been cancelled by the patient.'
+                                FROM appointments a
+                                JOIN doctors d ON a.doctor_id = d.id
+                                WHERE a.id = $1 AND d.user_id IS NOT NULL";
+                @pg_query_params($con, $notifyQuery, [$id]);
                 // send mail
                 sendAppointmentMail('cancel', [
                     'email' => $_SESSION['email'],
