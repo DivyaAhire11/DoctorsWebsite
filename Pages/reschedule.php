@@ -63,10 +63,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // collect form data
-            $reason   = $_POST['reason'];
-            $new_date = $_POST['new_date'];
-            $new_time = $_POST['new_time'];
-            $id       = $_GET['id'];   // from URL
+            $reason   = trim($_POST['reason']   ?? '');
+            $new_date = $_POST['new_date']       ?? '';
+            $new_time = $_POST['new_time']       ?? '';
+            $id       = (int)($_GET['id']        ?? 0);
+
+            if (!$id || empty($new_date) || empty($new_time)) {
+                $_SESSION['toast'] = "Please fill all fields.";
+                $_SESSION['toast_type'] = "error";
+                header("Location: /AppointMent/Appoint/Pages/user/dashboard.php");
+                exit;
+            }
+
+            // Fetch patient email from DB — don't trust session for email
+            $aptRow = pg_fetch_assoc(pg_query_params($con,
+                "SELECT patient_name, email FROM appointments WHERE id = $1", [$id]));
 
             // DB update
             $result = pg_query_params(
@@ -80,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 [$new_date, $new_time, $id]
             );
 
-            if ($result) {
+            if ($result && pg_affected_rows($result) > 0) {
                 // NOTIFY DOCTOR
                 $notifyQuery = "INSERT INTO notifications (receiver_id, receiver_role, type, message)
                                 SELECT d.user_id, 'doctor', 'reschedule',
@@ -89,23 +100,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 JOIN doctors d ON a.doctor_id = d.id
                                 WHERE a.id = $1 AND d.user_id IS NOT NULL";
                 @pg_query_params($con, $notifyQuery, [$id, date('d M Y', strtotime($new_date)), $new_time]);
-                // send mail
-                sendAppointmentMail('reschedule', [
-                    'email' => $_SESSION['email'],
-                    'name'  => $_SESSION['username'],
-                    'appo_id' => $id,
-                    'date' => $new_date,
-                    'time' => $new_time,
-                    'reason' => $reason
-                ]);
 
-                
-                /*rendering after submit
-                echo "<script>
-                    alert('Appointment rescheduled successfully');                    
-                </script>";*/
+                // Send reschedule email using DB email
+                if ($aptRow && !empty($aptRow['email'])) {
+                    require_once __DIR__ . '/../mail.php';
+                    sendAppointmentMail('reschedule', [
+                        'email'   => $aptRow['email'],
+                        'name'    => $aptRow['patient_name'] ?? $_SESSION['username'],
+                        'appo_id' => $id,
+                        'date'    => date('d M Y', strtotime($new_date)),
+                        'time'    => date('h:i A', strtotime($new_time)),
+                        'reason'  => $reason,
+                    ]);
+                }
+
                 $_SESSION['toast'] = "Appointment rescheduled successfully.";
                 $_SESSION['toast_type'] = "success";
+                header("Location:/AppointMent/Appoint/Pages/user/dashboard.php");
+                exit;
+            } else {
+                $_SESSION['toast'] = "Could not reschedule (appointment may be cancelled).";
+                $_SESSION['toast_type'] = "error";
                 header("Location:/AppointMent/Appoint/Pages/user/dashboard.php");
                 exit;
             }

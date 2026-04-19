@@ -2,6 +2,7 @@
 require_once '../../Includes/auth_check.php';
 require_role('doctor');
 include '../../config/db.php';
+require_once '../../mail.php';
 
 $userId   = $_SESSION['user_id'];
 $userName = $_SESSION['username'];
@@ -18,6 +19,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['app
     if (isset($map[$action])) {
         pg_query_params($con, "UPDATE appointments SET status=$1 WHERE id=$2 AND doctor_id=$3",
             [$map[$action], $aid, $doctorId]);
+
+        // Fetch patient details to send email
+        $aptInfo = pg_fetch_assoc(pg_query_params($con,
+            "SELECT a.patient_name, a.email, a.appoint_date, a.appoint_time, d.name AS doc_name
+             FROM appointments a
+             LEFT JOIN doctors d ON a.doctor_id = d.id
+             WHERE a.id = $1", [$aid]));
+
+        if ($aptInfo && !empty($aptInfo['email'])) {
+            if ($action === 'accept') {
+                // Email patient: appointment confirmed
+                sendAppointmentMail('confirm', [
+                    'email'   => $aptInfo['email'],
+                    'name'    => $aptInfo['patient_name'],
+                    'appo_id' => $aid,
+                    'doctor'  => $aptInfo['doc_name'] ?? $userName,
+                    'date'    => date('d M Y', strtotime($aptInfo['appoint_date'])),
+                    'time'    => date('h:i A', strtotime($aptInfo['appoint_time'])),
+                ]);
+            } elseif ($action === 'reject') {
+                // Email patient: appointment rejected/cancelled by doctor
+                sendAppointmentMail('cancel', [
+                    'email'        => $aptInfo['email'],
+                    'name'         => $aptInfo['patient_name'],
+                    'appo_id'      => $aid,
+                    'reason'       => 'The doctor was unable to accept this appointment at the selected time.',
+                    'cancelled_by' => 'Doctor (' . ($aptInfo['doc_name'] ?? $userName) . ')',
+                ]);
+            }
+        }
     }
     header("Location: appointments.php");
     exit();

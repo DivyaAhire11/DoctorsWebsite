@@ -18,16 +18,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // 3. VALIDATE INPUT
-$name   = trim($_POST['patient_name']);
-$email  = trim($_POST['email']);
-$doctorId = (int)$_POST['doctor']; // This comes from <select name="doctor"> value
-$date   = $_POST['date'];
-$time   = $_POST['time'];
-$reason = trim($_POST['problem'] ?? '');
-$userId = $_SESSION['user_id'];
+$name     = trim($_POST['patient_name']);
+$email    = trim($_POST['email']);
+$doctorId = (int)$_POST['doctor'];
+$date     = $_POST['date'];
+$time     = $_POST['time'];
+$reason   = trim($_POST['problem'] ?? '');
+$userId   = $_SESSION['user_id'];
 
 if (empty($name) || empty($email) || empty($doctorId) || empty($date) || empty($time)) {
    $_SESSION['toast'] = "All required fields must be filled.";
+   $_SESSION['toast_type'] = "error";
+   header("Location: bookAppoint.php");
+   exit();
+}
+
+// Email validation: must be valid AND have at least 6 chars before the @
+$emailLocal = substr($email, 0, strpos($email, '@'));
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($emailLocal) < 6) {
+   $_SESSION['toast'] = "Please enter a valid email address with at least 6 characters before the @ symbol.";
    $_SESSION['toast_type'] = "error";
    header("Location: bookAppoint.php");
    exit();

@@ -2,6 +2,7 @@
 require_once '../../Includes/auth_check.php';
 require_role('doctor');
 include '../../config/db.php';
+require_once '../../mail.php';
 
 $userId   = $_SESSION['user_id'];
 $userName = $_SESSION['username'];
@@ -15,9 +16,9 @@ if (!isset($_GET['id'])) {
 }
 $appointId = (int)$_GET['id'];
 
-// Verify appointment
+// Verify appointment and get patient email
 $query = "
-    SELECT a.id, a.status, a.patient_name, a.appoint_date, a.appoint_time 
+    SELECT a.id, a.status, a.patient_name, a.email, a.appoint_date, a.appoint_time 
     FROM appointments a 
     WHERE a.id = $1 AND a.doctor_id = $2
 ";
@@ -74,8 +75,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             [$appointId, $medicines, $notes, $pdfPath]
         );
 
-        if ($insert) {
-            $_SESSION['toast'] = "Prescription successfully saved!";
+    if ($insert) {
+            // Send prescription email to patient
+            $patEmail = $appoint['email'] ?? '';
+            if (!empty($patEmail)) {
+                $docNameRes = pg_fetch_assoc(pg_query_params($con, "SELECT name FROM doctors WHERE id=$1", [$doctorId]));
+                sendAppointmentMail('prescription', [
+                    'email'     => $patEmail,
+                    'name'      => $appoint['patient_name'],
+                    'doctor'    => $docNameRes['name'] ?? $userName,
+                    'date'      => date('d M Y', strtotime($appoint['appoint_date'])),
+                    'medicines' => $medicines,
+                    'notes'     => $notes ?: 'No additional notes.',
+                ]);
+            }
+
+            $_SESSION['toast'] = "Prescription saved and sent to patient email!";
             $_SESSION['toast_type'] = "success";
             header("Location: appointments.php");
             exit();
