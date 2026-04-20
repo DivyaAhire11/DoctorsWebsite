@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dermatology Service</title>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-spa"></i> Dermatology</h1>
-    <p>Expert care for skin, hair, and nails</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/Dermatologist.jpg" alt="Dermatology Department">
-    </div>
-
-    <div class="service-info">
-      <h2>Comprehensive Dermatology Care</h2>
-      <p>
-        Our Dermatology Department provides diagnosis and treatment for skin, hair, and nail disorders, including acne, pigmentation, allergies, infections, and chronic conditions. We emphasize preventive care and long-term treatment management.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>24/7</span>
-      <p>Skin Care Support</p>
-    </div>
-    <div>
-      <span>12+</span>
-      <p>Years of Experience</p>
-    </div>
-    <div>
-      <span>8k+</span>
-      <p>Patients Treated</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Acne and pigmentation management</li>
-        <li>Allergy and infection consultations</li>
-        <li>Hair and nail disorder treatments</li>
-        <li>Chronic skin condition management</li>
-        <li>Preventive skincare and follow-up</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-spray-can"></i>
-          <p>Advanced dermatology treatments</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert dermatologist guidance</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-stethoscope"></i>
-          <p>Thorough diagnosis</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Personalized care plan</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-calendar-check"></i>
-          <p>Easy appointment management</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Dermatology',
+    'tagline'     => 'Skin, Hair & Cosmetic Care',
+    'description' => 'Our Dermatology department offers expert diagnosis and treatment for all skin, hair, and nail conditions. From medical dermatology to advanced cosmetic procedures, our board-certified dermatologists combine science and aesthetics for outstanding results.',
+    'heroImage'   => '../../images/Doctors/Dermatologist.jpg',
+    'icon'        => 'fa-spa',
+    'badge'       => 'Dermatology Department',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Board-Certified Dermatologists',
+    'stats' => [
+        ['15k+','Skin Treatments'],
+        ['8+',  'Specialist Doctors'],
+        ['98%', 'Patient Satisfaction'],
+        ['200+','Cosmetic Procedures'],
+    ],
+    'features' => [
+        'Diagnosis and treatment of 100+ skin conditions',
+        'Advanced laser treatments and chemical peels',
+        'Hair loss analysis and PRP therapy',
+        'Acne, psoriasis, eczema treatment protocols',
+        'Mole mapping and skin cancer screening',
+        'Personalised skincare regimen planning',
+    ],
+    'services' => [
+        ['icon'=>'fa-magnifying-glass', 'title'=>'Skin Cancer Screening',     'desc'=>'Advanced dermoscopy and mole mapping for early detection of melanoma and other skin cancers.'],
+        ['icon'=>'fa-face-smile',       'title'=>'Acne & Scar Treatment',     'desc'=>'Medical and laser-based treatments for active acne, scars, and post-inflammatory hyperpigmentation.'],
+        ['icon'=>'fa-wand-magic-sparkles','title'=>'Cosmetic Dermatology',    'desc'=>'Botox, dermal fillers, PRP facials, and skin rejuvenation procedures.'],
+        ['icon'=>'fa-person-rays',      'title'=>'Laser Therapy',             'desc'=>'State-of-the-art laser treatments for hair removal, pigmentation, and skin resurfacing.'],
+        ['icon'=>'fa-head-side',        'title'=>'Hair & Scalp Disorders',    'desc'=>'Diagnosis and treatment of alopecia, dandruff, scalp psoriasis, and hair thinning.'],
+        ['icon'=>'fa-shield',           'title'=>'Allergy & Eczema Care',     'desc'=>'Patch testing, allergy identification, and comprehensive eczema/dermatitis management.'],
+    ],
+    'steps' => [
+        ['title'=>'Consultation',      'desc'=>'Discuss your skin concerns with our specialist and get a personalised diagnosis.'],
+        ['title'=>'Diagnosis',         'desc'=>'Advanced tools like dermoscopy, UV light analysis, and skin biopsy if needed.'],
+        ['title'=>'Treatment Plan',    'desc'=>'Receive a tailored treatment protocol — medical, procedural, or cosmetic.'],
+        ['title'=>'Procedure / Therapy','desc'=>'Same-day or scheduled treatments performed in our state-of-the-art procedure rooms.'],
+        ['title'=>'Aftercare',         'desc'=>'Detailed aftercare instructions and follow-up to ensure optimal results.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-face-tired',    'label'=>'Acne & Pimples'],
+        ['icon'=>'fa-droplet',       'label'=>'Eczema / Atopic Dermatitis'],
+        ['icon'=>'fa-sun',           'label'=>'Psoriasis'],
+        ['icon'=>'fa-circle-dot',    'label'=>'Vitiligo'],
+        ['icon'=>'fa-head-side',     'label'=>'Hair Loss (Alopecia)'],
+        ['icon'=>'fa-virus',         'label'=>'Fungal Infections'],
+        ['icon'=>'fa-circle-xmark',  'label'=>'Warts & Molluscum'],
+        ['icon'=>'fa-face-smile',    'label'=>'Melasma & Pigmentation'],
+        ['icon'=>'fa-triangle-exclamation','label'=>'Skin Allergies / Hives'],
+        ['icon'=>'fa-radiation',     'label'=>'Skin Cancer Screening'],
+    ],
+    'testimonials' => [
+        ['text'=>'"My acne scars of 5 years are almost invisible after the laser treatment. The dermatologist explained everything patiently and the results exceeded expectations."', 'name'=>'Sneha Kulkarni', 'role'=>'Student, Aurangabad', 'init'=>'S'],
+        ['text'=>'"I struggled with psoriasis for years. SmartCare\'s dermatology team put me on the correct treatment and my skin has never been better."', 'name'=>'Vikram Desai', 'role'=>'Teacher, Nagpur', 'init'=>'V'],
+        ['text'=>'"The cosmetic procedures are done so professionally. I got a subtle, natural look with the fillers. Highly recommend Dr. Thomas\'s team."', 'name'=>'Meera Agarwal', 'role'=>'Entrepreneur, Mumbai', 'init'=>'M'],
+    ],
+    'faqs' => [
+        ['q'=>'Is cosmetic dermatology safe?', 'a'=>'Yes, when performed by a board-certified dermatologist using approved products and techniques. We follow international safety protocols for every procedure.'],
+        ['q'=>'How many sessions are needed for laser hair removal?', 'a'=>'Typically 6–8 sessions spaced 4–6 weeks apart, depending on hair type, skin tone, and treatment area.'],
+        ['q'=>'Will my insurance cover dermatology visits?', 'a'=>'Medical dermatology visits (acne, eczema, psoriasis, etc.) are generally covered. Cosmetic procedures are usually out-of-pocket. Check with your insurer.'],
+        ['q'=>'Can children visit the dermatology department?', 'a'=>'Absolutely. We treat patients of all ages, including infants with nappy rash, childhood eczema, and atopic dermatitis.'],
+    ],
+];
+include '../../Includes/service_page.php';

@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laboratory Test</title>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-flask"></i> Laboratory Tests</h1>
-    <p>Accurate diagnostic support for proper treatment</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/laboratory.jpg" alt="Laboratory Department">
-    </div>
-
-    <div class="service-info">
-      <h2>Comprehensive Diagnostic Services</h2>
-      <p>
-        Our Laboratory Test service provides accurate and timely diagnostic support through blood tests, urine tests, and other clinical investigations. These results help doctors in proper diagnosis, treatment planning, and monitoring patient progress.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>10k+</span>
-      <p>Tests Conducted</p>
-    </div>
-    <div>
-      <span>15+</span>
-      <p>Years of Experience</p>
-    </div>
-    <div>
-      <span>5k+</span>
-      <p>Patients Served</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Blood tests including CBC, lipid profile, and glucose</li>
-        <li>Urine analysis and culture</li>
-        <li>Hormone and enzyme testing</li>
-        <li>Microbiological and pathological tests</li>
-        <li>Accurate and timely reporting for doctors</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-flask"></i>
-          <p>Advanced lab equipment</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert lab technicians</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-vial"></i>
-          <p>Comprehensive testing panels</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Accurate reports & analysis</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-calendar-check"></i>
-          <p>Appointment & report management</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Laboratory & Diagnostics',
+    'tagline'     => 'Accurate. Fast. Certified.',
+    'description' => 'Our NABL-accredited laboratory provides a comprehensive range of pathology, biochemistry, microbiology, and molecular diagnostic tests. With same-day reports and home sample collection, we make diagnostics convenient and reliable.',
+    'heroImage'   => '../../images/Doctors/laboratory.jpg',
+    'icon'        => 'fa-flask',
+    'badge'       => 'Laboratory & Diagnostics',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ NABL Accredited Laboratory',
+    'stats' => [
+        ['500+', 'Tests Available'],
+        ['98.9%','Diagnostic Accuracy'],
+        ['4hr',  'Average Report Time'],
+        ['Home', 'Sample Collection'],
+    ],
+    'features' => [
+        'NABL-accredited with international quality standards',
+        'Over 500 diagnostic tests across all specialties',
+        'Home sample collection at your convenience',
+        'Digital reports delivered via email and app',
+        'Same-day reports for most routine panels',
+        'Expert pathologist review for all reports',
+    ],
+    'services' => [
+        ['icon'=>'fa-droplet',         'title'=>'Haematology',               'desc'=>'CBC, ESR, peripheral smear, coagulation studies, and bone marrow analysis.'],
+        ['icon'=>'fa-flask',           'title'=>'Biochemistry',              'desc'=>'Liver, kidney, thyroid, lipid, blood sugar, and electrolyte panels.'],
+        ['icon'=>'fa-virus',           'title'=>'Microbiology & Culture',    'desc'=>'Blood, urine, pus, and sputum cultures with antibiotic sensitivity testing.'],
+        ['icon'=>'fa-dna',             'title'=>'Molecular Diagnostics',     'desc'=>'PCR, RT-PCR, FISH, and next-generation sequencing for genetic and infectious diseases.'],
+        ['icon'=>'fa-magnifying-glass','title'=>'Histopathology / Biopsy',   'desc'=>'Tissue examination by an expert pathologist for cancer diagnosis and grading.'],
+        ['icon'=>'fa-home',            'title'=>'Home Sample Collection',    'desc'=>'Book a sample collection at your home between 6AM–9AM for early morning fasting tests.'],
+    ],
+    'steps' => [
+        ['title'=>'Book a Test',         'desc'=>'Order online, via our app, or at the lab reception. Home collection available.'],
+        ['title'=>'Sample Collection',   'desc'=>'Phlebotomist collects your sample — blood, urine, swab — at lab or home.'],
+        ['title'=>'Analysis',            'desc'=>'Samples analysed on automated, quality-controlled, NABL-certified analysers.'],
+        ['title'=>'Pathologist Review',  'desc'=>'All reports reviewed and validated by a qualified pathologist.'],
+        ['title'=>'Receive Report',      'desc'=>'Reports delivered digitally via email, WhatsApp, or patient portal.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-droplet',           'label'=>'Diabetes (HbA1c, FBS, PPBS)'],
+        ['icon'=>'fa-heart',             'label'=>'Cardiac Markers (Troponin, CK-MB)'],
+        ['icon'=>'fa-filter',            'label'=>'Kidney Function Tests'],
+        ['icon'=>'fa-circle',            'label'=>'Liver Function Tests'],
+        ['icon'=>'fa-shield-virus',      'label'=>'Thyroid Profile (T3, T4, TSH)'],
+        ['icon'=>'fa-virus',             'label'=>'Infection Cultures & PCR'],
+        ['icon'=>'fa-dna',               'label'=>'Genetic & Cancer Markers'],
+        ['icon'=>'fa-chart-bar',         'label'=>'Lipid Profile'],
+        ['icon'=>'fa-vial',              'label'=>'Vitamin D & B12'],
+        ['icon'=>'fa-person-pregnant',   'label'=>'Antenatal & Fertility Panel'],
+    ],
+    'testimonials' => [
+        ['text'=>'"Home sample collection at 6:30 AM, reports on WhatsApp by noon. The fastest, most convenient lab service I have ever used."', 'name'=>'Amit Kulkarni', 'role'=>'CA, Pune', 'init'=>'A'],
+        ['text'=>'"The histopathology report for my biopsy was detailed and clear. The pathologist called me personally to explain the findings — above and beyond."', 'name'=>'Dr. Usha Patel', 'role'=>'GP, Ahmedabad', 'init'=>'U'],
+        ['text'=>'"Accurate, fast, and honest. No unnecessary tests pushed. My family uses SmartCare lab for all our annual health check panels."', 'name'=>'Vikram Nair', 'role'=>'Banker, Mumbai', 'init'=>'V'],
+    ],
+    'faqs' => [
+        ['q'=>'Do I need to fast before blood tests?', 'a'=>'Fasting is required for blood sugar, lipid profile, and some other tests. A 10–12 hour overnight fast is recommended. You can drink water. Other tests do not require fasting.'],
+        ['q'=>'How soon will I get my reports?', 'a'=>'Most routine blood tests are reported within 4–6 hours. Culture tests take 2–5 days. Histopathology typically takes 5–7 working days.'],
+        ['q'=>'Is home sample collection available every day?', 'a'=>'Yes, home collection is available 7 days a week from 6 AM to 9 AM. Book the previous evening for next-morning collection.'],
+        ['q'=>'Can I collect my own sample for a urine or stool test?', 'a'=>'Yes. We provide sterile collection containers. Instructions for proper sample collection will be given at the time of booking.'],
+    ],
+];
+include '../../Includes/service_page.php';

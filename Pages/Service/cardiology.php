@@ -1,105 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cardiology Service</title>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-heartbeat"></i> Cardiology</h1>
-    <p>Advanced care for heart and vascular health</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/cardiology.png" alt="Cardiology Department">
-    </div>
-
-    <div class="service-info">
-      <h2>Clinical Excellence in Cardiac Care</h2>
-      <p>
-        Our Cardiology Department provides comprehensive evaluation and management of
-        cardiovascular diseases using evidence-based protocols and modern diagnostic
-        technologies. We focus on long-term heart health, prevention, and continuous monitoring.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Real-Time Stats -->
-  <!-- Highlights / Stats (Static) -->
-<section class="highlights">
-  <div>
-    <span>24/7</span>
-    <p>Cardiac Monitoring</p>
-  </div>
-  <div>
-    <span>15+</span>
-    <p>Years of Experience</p>
-  </div>
-  <div>
-    <span>10k+</span>
-    <p>Patients Treated</p>
-  </div>
-</section>
-
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>- Hypertension and lipid disorder management</li>
-        <li>- Diagnosis and treatment of arrhythmias</li>
-        <li>- Cardiac risk assessment and preventive screenings</li>
-        <li>- Non-invasive heart imaging and monitoring</li>
-        <li>- Long-term follow-up and lifestyle guidance</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-heart"></i>
-          <p>Heart health evaluation</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-chart-line"></i>
-          <p>Risk monitoring & stats</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert cardiologist guidance</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-stethoscope"></i>
-          <p>Advanced diagnostics</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Personalized treatment plan</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Cardiology',
+    'tagline'     => 'Heart & Cardiovascular Care',
+    'description' => 'Our Cardiology department delivers world-class diagnosis and treatment for all heart and vascular conditions. Our expert cardiologists use cutting-edge technology to keep your heart healthy at every stage of life.',
+    'heroImage'   => '../../images/Doctors/cardiology.png',
+    'icon'        => 'fa-heart-pulse',
+    'badge'       => 'Cardiology Department',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Cardiac Care Centre of Excellence',
+    'stats' => [
+        ['5k+', 'Cardiac Procedures'],
+        ['12+',  'Cardiologists'],
+        ['24/7', 'Cardiac ICU'],
+        ['99%',  'Survival Rate'],
+    ],
+    'features' => [
+        'Non-invasive and invasive cardiac diagnostics',
+        'Echocardiography, stress testing and Holter monitoring',
+        'Interventional cardiology — angioplasty, stenting',
+        'Cardiac rehabilitation and lifestyle counselling',
+        'Paediatric cardiology services',
+        'Heart failure and arrhythmia management',
+    ],
+    'services' => [
+        ['icon'=>'fa-wave-square',     'title'=>'ECG & Stress Testing',      'desc'=>'Resting and exercise ECG along with treadmill stress tests to assess heart function.'],
+        ['icon'=>'fa-heart-circle-plus','title'=>'Echocardiography',         'desc'=>'Advanced 2D and 3D echo imaging to evaluate heart structure and pumping function.'],
+        ['icon'=>'fa-syringe',         'title'=>'Angioplasty & Stenting',    'desc'=>'Minimally invasive interventional procedures to open blocked coronary arteries.'],
+        ['icon'=>'fa-heart',           'title'=>'Heart Failure Management',  'desc'=>'Comprehensive clinic for patients with reduced ejection fraction and advanced heart failure.'],
+        ['icon'=>'fa-bolt',            'title'=>'Arrhythmia Care',           'desc'=>'Electrophysiology, Holter monitoring, pacemaker implantation, and ablation therapy.'],
+        ['icon'=>'fa-person-running',  'title'=>'Cardiac Rehabilitation',    'desc'=>'Structured exercise and lifestyle programme post-cardiac event or surgery.'],
+    ],
+    'steps' => [
+        ['title'=>'Initial Consultation', 'desc'=>'Detailed history, risk assessment, and baseline ECG.'],
+        ['title'=>'Diagnostics',          'desc'=>'Echo, stress test, blood markers, or angiogram based on clinical need.'],
+        ['title'=>'Treatment Plan',       'desc'=>'Medical management, intervention, or surgical referral as indicated.'],
+        ['title'=>'Procedure',            'desc'=>'In-house cath lab and OT for interventional and surgical procedures.'],
+        ['title'=>'Cardiac Rehab',        'desc'=>'Structured follow-up and rehabilitation programme for full recovery.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-heart-crack',       'label'=>'Coronary Artery Disease'],
+        ['icon'=>'fa-bolt',              'label'=>'Arrhythmias / AF'],
+        ['icon'=>'fa-heart-circle-exclamation','label'=>'Heart Failure'],
+        ['icon'=>'fa-circle-exclamation','label'=>'Hypertension'],
+        ['icon'=>'fa-droplet',           'label'=>'High Cholesterol'],
+        ['icon'=>'fa-heart-circle-xmark','label'=>'Valvular Heart Disease'],
+        ['icon'=>'fa-baby',              'label'=>'Congenital Heart Defects'],
+        ['icon'=>'fa-triangle-exclamation','label'=>'Chest Pain / Angina'],
+        ['icon'=>'fa-person-dots-from-line','label'=>'Peripheral Artery Disease'],
+        ['icon'=>'fa-wind',              'label'=>'Cardiac Asthma / Breathlessness'],
+    ],
+    'testimonials' => [
+        ['text'=>'"After my heart attack, the SmartCare cardiology team saved my life. The cardiac rehab programme got me back to running 5K within 4 months!"', 'name'=>'Suresh Iyer', 'role'=>'Retired Engineer, Chennai', 'init'=>'S'],
+        ['text'=>'"The pacemaker procedure was explained step-by-step. I felt absolutely no fear because the team was so professional and reassuring."', 'name'=>'Leela Nair', 'role'=>'Home-maker, Kochi', 'init'=>'L'],
+        ['text'=>'"World-class cath lab facility. I had my angioplasty done and was discharged in 36 hours. Incredible care from all staff."', 'name'=>'Arun Pillai', 'role'=>'Businessman, Bengaluru', 'init'=>'A'],
+    ],
+    'faqs' => [
+        ['q'=>'What is the difference between a cardiologist and a cardiac surgeon?', 'a'=>'A cardiologist manages heart conditions medically and performs catheter-based procedures. A cardiac surgeon performs open-heart or bypass surgery. Both work together in complex cases.'],
+        ['q'=>'When should I see a cardiologist?', 'a'=>'Seek cardiology evaluation if you experience chest pain, breathlessness, palpitations, fainting, or have risk factors like diabetes, hypertension, high cholesterol, or family history of heart disease.'],
+        ['q'=>'Is the angioplasty procedure painful?', 'a'=>'Angioplasty is done under local anaesthesia and mild sedation. Most patients feel minimal discomfort and can walk within a few hours of the procedure.'],
+        ['q'=>'How long does recovery take after a heart attack?', 'a'=>'With modern treatment, most patients are discharged in 3–5 days. Full cardiac rehabilitation can take 8–12 weeks. Individual recovery varies.'],
+    ],
+];
+include '../../Includes/service_page.php';

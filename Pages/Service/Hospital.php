@@ -1,83 +1,65 @@
-<?php include "../../Includes/navbar.php"; ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Hospital Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/navbar.css">
-  <link rel="stylesheet" href="../../Style/footer.css">
-  <link rel="stylesheet" href="../../Style/pages/hospital.css">
-</head>
-
-<body>
-  
-  <div class="hospital-container">
-  <?php include "../../Includes/navbar.php"; ?>
-
-  <!-- HERO SECTION -->
-  <section class="hospital-hero">
-    <div class="hero-text">
-      <h1>Hospital Services</h1>
-      <p>Delivering compassionate, advanced, and reliable healthcare for everyone</p>
-    </div>
-  </section>
-
-  <!-- IMAGE + INFO -->
-  <section class="hospital-about">
-    <div class="hospital-image">
-     <!-- <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" -->
-     <img src="../../images/bgHospital.jpg"
-     alt="Modern Hospital Building">
-    </div>
-
-    <div class="hospital-info">
-      <h2>About Our Hospital</h2>
-      <p>
-        Our hospital is a multi-specialty healthcare institution dedicated to providing
-        high-quality medical services using modern technology and expert professionals.
-        We focus on patient safety, comfort, and effective treatment.
-      </p>
-
-      <p>
-        With state-of-the-art infrastructure, experienced doctors, and a caring medical
-        staff, we ensure comprehensive healthcare services across all major departments.
-      </p>
-    </div>
-  </section>
-
-  <!-- IMPORTANCE SECTION -->
-  <section class="hospital-importance">
-    <h2>Why Hospitals Are Important</h2>
-
-    <ul>
-      <li><i class="fas fa-check-circle"></i> Immediate medical care during emergencies</li>
-      <li><i class="fas fa-check-circle"></i> Accurate diagnosis using advanced equipment</li>
-      <li><i class="fas fa-check-circle"></i> Specialized treatment by expert doctors</li>
-      <li><i class="fas fa-check-circle"></i> Continuous patient monitoring and care</li>
-      <li><i class="fas fa-check-circle"></i> Preventive healthcare and health education</li>
-    </ul>
-  </section>
-
-  <!-- CTA -->
-  <section class="hospital-cta">
-    <h2>Book an Appointment</h2>
-    <p>Take the first step towards better health with our trusted medical professionals.</p>
-
-    <a href="../../Pages/AppointBook.php" class="cta-button">
-      <i class="fas fa-calendar-check"></i> Book Appointment
-    </a>
-  </section>
-
-  <div class="breadcrumb">
-    <a href="services.php"><i class="fas fa-arrow-left"></i> Back to Services</a>
-  </div>
-
-</div>
-
-<?php include "../../Includes/footer.php"; ?>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Hospital Services',
+    'tagline'     => 'Complete Inpatient & Multi-Specialty Hospital Care',
+    'description' => 'SmartCare Hospital provides world-class inpatient, day-care, and outpatient services across 25+ specialties. Our state-of-the-art infrastructure, skilled nursing team, and patient-first philosophy ensure the highest standards of care under one roof.',
+    'heroImage'   => '../../images/bgHospital.jpg',
+    'icon'        => 'fa-hospital',
+    'badge'       => 'Multi-Specialty Hospital',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ NABH Accredited Hospital',
+    'stats' => [
+        ['500+',  'Beds'],
+        ['25+',   'Specialties'],
+        ['300+',  'Specialists'],
+        ['50k+',  'Patients Annually'],
+    ],
+    'features' => [
+        'NABH accredited with international patient safety standards',
+        'Advanced modular OT complex — 12 operation theatres',
+        'Medical, surgical, and cardiac ICUs',
+        'Private, semi-private, and general ward options',
+        'Cashless insurance across 200+ TPA networks',
+        '24/7 pharmacy, blood bank, and laboratory',
+    ],
+    'services' => [
+        ['icon'=>'fa-bed',              'title'=>'Inpatient Admission',       'desc'=>'Private, semi-private, and general ward hospitalisations with round-the-clock nursing care.'],
+        ['icon'=>'fa-scissors',         'title'=>'Surgical Services',         'desc'=>'Laparoscopic, robotic, and open surgeries across general, ortho, cardiac, and neuro surgery.'],
+        ['icon'=>'fa-monitor-heart-rate','title'=>'Intensive Care (ICU)',     'desc'=>'Medical ICU, cardiac care unit, neonatal ICU, and surgical ICU with 1:1 nurse-to-patient ratio.'],
+        ['icon'=>'fa-flask',            'title'=>'Laboratory & Imaging',      'desc'=>'In-house NABL lab, digital X-ray, CT, MRI, PET-CT, and ultrasound available 24/7.'],
+        ['icon'=>'fa-person-walking',   'title'=>'Physiotherapy & Rehab',    'desc'=>'In-patient and outpatient physiotherapy, respiratory therapy, and stroke rehabilitation.'],
+        ['icon'=>'fa-credit-card',      'title'=>'Cashless Insurance',        'desc'=>'Tie-ups with 200+ insurance companies and TPA networks for hassle-free cashless hospitalisation.'],
+    ],
+    'steps' => [
+        ['title'=>'Planned Admission',   'desc'=>'Pre-admission counselling, insurance pre-authorisation, and bed booking in advance.'],
+        ['title'=>'Admission Process',   'desc'=>'Quick check-in at our admission desk with room allotment and care team assignment.'],
+        ['title'=>'Inpatient Care',      'desc'=>'Specialist visits, nursing care, diagnostics, and procedures as per treatment plan.'],
+        ['title'=>'Discharge Planning',  'desc'=>'Discharge summary, medication plan, follow-up dates, and home care instructions.'],
+        ['title'=>'Insurance Settlement','desc'=>'Dedicated insurance desk handles all TPA coordination and billing queries.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-scissors',         'label'=>'General & Laparoscopic Surgery'],
+        ['icon'=>'fa-heart',            'label'=>'Cardiac Surgeries & Interventions'],
+        ['icon'=>'fa-brain',            'label'=>'Neurosurgery'],
+        ['icon'=>'fa-bone',             'label'=>'Orthopaedic Surgeries'],
+        ['icon'=>'fa-baby',             'label'=>'Obstetrics & Neonatal Care'],
+        ['icon'=>'fa-lungs',            'label'=>'Pulmonology & Respiratory'],
+        ['icon'=>'fa-circle',           'label'=>'Oncology (Cancer) Treatment'],
+        ['icon'=>'fa-kidney',           'label'=>'Urology & Nephrology'],
+        ['icon'=>'fa-virus',            'label'=>'Infectious Disease Management'],
+        ['icon'=>'fa-eye',              'label'=>'Ophthalmology & ENT'],
+    ],
+    'testimonials' => [
+        ['text'=>'"From admission to discharge, every team member — from doctors to housekeeping — was professional and compassionate. SmartCare genuinely cares."', 'name'=>'Mrs. Shalini Varma', 'role'=>'Hyderabad', 'init'=>'S'],
+        ['text'=>'"The cashless insurance process was completely smooth. The TPA desk handled everything and I didn\'t pay a single rupee out of pocket."', 'name'=>'Ashok Tiwari', 'role'=>'Government Employee, Bhopal', 'init'=>'A'],
+        ['text'=>'"The NICU team took exceptional care of our premature baby for 6 weeks. Their dedication and communication with our family was outstanding."', 'name'=>'Neha & Sunil Joshi', 'role'=>'Pune', 'init'=>'N'],
+    ],
+    'faqs' => [
+        ['q'=>'How do I get admitted to the hospital?', 'a'=>'For planned admissions, visit the admission desk with your doctor\'s reference letter and insurance card. For emergencies, proceed directly to the Emergency department — admission is initiated from there.'],
+        ['q'=>'Which insurance companies are accepted?', 'a'=>'We are empanelled with 200+ insurance companies and TPAs including Star Health, HDFC Ergo, New India, Niva Bupa, and all government schemes (CGHS, ECHS, Ayushman Bharat).'],
+        ['q'=>'Are visiting hours restricted?', 'a'=>'General visiting hours are 11AM–1PM and 5PM–7PM. ICU visits are permitted for one close relative at specified times. Patient welfare and infection control guide all visiting policies.'],
+        ['q'=>'Can I request a specific doctor or surgeon?', 'a'=>'Yes, you can request a specific specialist for your care. We will accommodate your preference subject to the doctor\'s availability and case appropriateness.'],
+    ],
+];
+include '../../Includes/service_page.php';

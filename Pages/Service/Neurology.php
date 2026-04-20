@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neurology Service</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-brain"></i> Neurology</h1>
-    <p>Expert care for brain and nervous system disorders</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/nurologist.png" alt="Neurology Department">
-    </div>
-
-    <div class="service-info">
-      <h2>Specialized Neurological Care</h2>
-      <p>
-        Our Neurology Service manages disorders of the brain and nervous system, including headaches, epilepsy, stroke complications, and nerve disorders. We provide specialized consultations, advanced diagnostics, and continuous neurological care for long-term patient health.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>20+</span>
-      <p>Years of Experience</p>
-    </div>
-    <div>
-      <span>5k+</span>
-      <p>Patients Treated</p>
-    </div>
-    <div>
-      <span>24/7</span>
-      <p>Neurological Support</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Diagnosis of neurological disorders</li>
-        <li>Stroke and epilepsy management</li>
-        <li>Headache and migraine evaluation</li>
-        <li>Nerve and muscle disorder treatment</li>
-        <li>Long-term neurological follow-up</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-brain"></i>
-          <p>Brain health evaluation</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-stethoscope"></i>
-          <p>Advanced diagnostics</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert neurologist guidance</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-chart-line"></i>
-          <p>Continuous monitoring & follow-up</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Personalized treatment plan</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i>Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Neurology',
+    'tagline'     => 'Brain, Spine & Nervous System Care',
+    'description' => 'Our Neurology department diagnoses and treats the full spectrum of brain, spinal cord, and peripheral nerve disorders. From migraines to epilepsy and stroke, our neurologists use state-of-the-art diagnostics to deliver precision care.',
+    'heroImage'   => '../../images/Doctors/nurologist.png',
+    'icon'        => 'fa-brain',
+    'badge'       => 'Neurology Department',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Joint Commission Certified Stroke Centre',
+    'stats' => [
+        ['3k+', 'Neurological Cases'],
+        ['10+',  'Neurologists'],
+        ['24/7', 'Stroke Response Unit'],
+        ['95%',  'Diagnostic Accuracy'],
+    ],
+    'features' => [
+        'Comprehensive neurological examination and diagnosis',
+        'EEG, EMG, nerve conduction studies',
+        'MRI and CT brain & spine imaging',
+        'Stroke thrombolysis and thrombectomy',
+        'Epilepsy monitoring and surgery evaluation',
+        'Headache, migraine and vertigo clinics',
+    ],
+    'services' => [
+        ['icon'=>'fa-brain',           'title'=>'Stroke Care & Thrombolysis', 'desc'=>'Rapid-response stroke unit with 24/7 thrombolysis, thrombectomy, and neuro-ICU care.'],
+        ['icon'=>'fa-wave-square',     'title'=>'EEG & Epilepsy Clinic',     'desc'=>'Video EEG monitoring, seizure diary analysis, and epilepsy surgery evaluation.'],
+        ['icon'=>'fa-person-rays',     'title'=>'Nerve & Muscle Disorders',  'desc'=>'EMG, nerve conduction studies, and neuromuscular biopsy for peripheral neuropathy and myopathy.'],
+        ['icon'=>'fa-head-side-virus', 'title'=>'Headache & Migraine Clinic','desc'=>'Evidence-based treatment protocols for chronic migraine, cluster headaches, and tension headaches.'],
+        ['icon'=>'fa-person-walking',  'title'=>'Movement Disorders',        'desc'=>'Parkinson\'s disease management, tremor assessment, dystonia, and deep brain stimulation referrals.'],
+        ['icon'=>'fa-shield-halved',   'title'=>'Memory & Dementia Clinic',  'desc'=>'Cognitive assessment, MCI evaluation, Alzheimer\'s care planning, and caregiver support.'],
+    ],
+    'steps' => [
+        ['title'=>'Neurological Assessment', 'desc'=>'Detailed neurological history and clinical examination by a specialist.'],
+        ['title'=>'Investigations',           'desc'=>'EEG, MRI, nerve conduction, or lumbar puncture based on clinical indication.'],
+        ['title'=>'Diagnosis',                'desc'=>'Accurate diagnosis using international clinical guidelines.'],
+        ['title'=>'Treatment',                'desc'=>'Medication, interventional therapy, or rehabilitation programme.'],
+        ['title'=>'Long-term Follow-up',      'desc'=>'Structured review and adjustment of therapy for optimal outcomes.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-brain',               'label'=>'Stroke & TIA'],
+        ['icon'=>'fa-bolt',                'label'=>'Epilepsy / Seizures'],
+        ['icon'=>'fa-head-side-virus',     'label'=>'Migraines & Headaches'],
+        ['icon'=>'fa-person-walking-arrow-loop-left','label'=>'Parkinson\'s Disease'],
+        ['icon'=>'fa-rotate',              'label'=>'Vertigo & Dizziness'],
+        ['icon'=>'fa-circle-question',     'label'=>'Memory Loss / Dementia'],
+        ['icon'=>'fa-person-dots-from-line','label'=>'Peripheral Neuropathy'],
+        ['icon'=>'fa-triangle-exclamation','label'=>'Multiple Sclerosis'],
+        ['icon'=>'fa-face-frown',          'label'=>'Facial Palsy (Bell\'s Palsy)'],
+        ['icon'=>'fa-wheelchair',          'label'=>'Spinal Cord Disorders'],
+    ],
+    'testimonials' => [
+        ['text'=>'"After my stroke, I thought my life was over. SmartCare\'s neuro team started treatment within 45 minutes and I walked out of hospital with minimal deficit."', 'name'=>'Ramesh Gaikwad', 'role'=>'Farmer, Solapur', 'init'=>'R'],
+        ['text'=>'"My epilepsy is now completely controlled after 8 years of uncontrolled seizures. The team identified the correct medication combination for me."', 'name'=>'Kavitha Rao', 'role'=>'School Teacher, Hyderabad', 'init'=>'K'],
+        ['text'=>'"The migraine clinic changed my life. I went from 20 headache days a month to just 2 with the right treatment."', 'name'=>'Nisha Patel', 'role'=>'Graphic Designer, Ahmedabad', 'init'=>'N'],
+    ],
+    'faqs' => [
+        ['q'=>'What are warning signs of a stroke?', 'a'=>'Remember FAST: Facial drooping, Arm weakness, Speech difficulty, Time to call emergency. Other signs include sudden severe headache, vison changes, and loss of balance.'],
+        ['q'=>'Is an EEG painful?', 'a'=>'No. EEG is completely painless. Small electrodes are placed on the scalp to record brain electrical activity. The procedure takes 20–40 minutes.'],
+        ['q'=>'What is a neurology appointment like?', 'a'=>'The neurologist will take a detailed history, conduct a comprehensive neurological examination, and may order imaging or electrical studies. Initial appointments typically take 45–60 minutes.'],
+        ['q'=>'Can migraines be permanently cured?', 'a'=>'There is no cure, but migraines can be effectively managed. Preventive medications, botox injections, and CGRP inhibitors have transformed migraine management for many patients.'],
+    ],
+];
+include '../../Includes/service_page.php';

@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orthopedic Service</title>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-bone"></i> Orthopedic</h1>
-    <p>Expert care for bones, joints, and musculoskeletal health</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/orthopedic.png" alt="Orthopedic Department">
-    </div>
-
-    <div class="service-info">
-      <h2>Comprehensive Orthopedic Care</h2>
-      <p>
-        Our Orthopedic Service focuses on disorders related to bones, joints, muscles, and the skeletal system. We provide treatment for fractures, arthritis, back pain, and sports injuries, offering both surgical and non-surgical care to improve mobility and reduce physical discomfort.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>20+</span>
-      <p>Years of Experience</p>
-    </div>
-    <div>
-      <span>5k+</span>
-      <p>Patients Treated</p>
-    </div>
-    <div>
-      <span>24/7</span>
-      <p>Orthopedic Support</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Fracture and injury management</li>
-        <li>Arthritis and joint pain treatment</li>
-        <li>Back and spinal care</li>
-        <li>Sports injury rehabilitation</li>
-        <li>Surgical and non-surgical interventions</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-bone"></i>
-          <p>Bone and joint care</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-dumbbell"></i>
-          <p>Sports injury rehabilitation</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert orthopedic guidance</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-hospital"></i>
-          <p>Advanced surgical support</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Personalized treatment plan</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i>Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Orthopedics',
+    'tagline'     => 'Bone, Joint & Sports Medicine',
+    'description' => 'Our Orthopedic department specialises in the diagnosis, treatment, and rehabilitation of musculoskeletal disorders. From sports injuries to joint replacement surgeries, our orthopedic surgeons help you move pain-free again.',
+    'heroImage'   => '../../images/Doctors/orthopedic.png',
+    'icon'        => 'fa-bone',
+    'badge'       => 'Orthopedics & Sports Medicine',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Joint Replacement Centre of Excellence',
+    'stats' => [
+        ['4k+', 'Joint Replacements'],
+        ['12+',  'Orthopedic Surgeons'],
+        ['92%',  'Return to Sport Rate'],
+        ['30+',  'Years Experience'],
+    ],
+    'features' => [
+        'Total knee, hip, and shoulder joint replacement',
+        'Arthroscopic minimally invasive surgery',
+        'Sports injury management and ACL reconstruction',
+        'Spine surgery — disc prolapse, scoliosis correction',
+        'Fracture fixation and trauma care',
+        'Paediatric orthopedic services for children',
+    ],
+    'services' => [
+        ['icon'=>'fa-bone',            'title'=>'Joint Replacement',         'desc'=>'Primary and revision knee, hip, and shoulder replacements using the latest implant technology.'],
+        ['icon'=>'fa-person-running',  'title'=>'Sports Medicine',           'desc'=>'ACL/PCL reconstruction, meniscus repair, rotator cuff surgery, and return-to-sport programmes.'],
+        ['icon'=>'fa-circle-dot',      'title'=>'Arthroscopy',               'desc'=>'Minimally invasive keyhole surgery for joint problems — faster recovery, smaller scars.'],
+        ['icon'=>'fa-triangle-exclamation','title'=>'Fracture & Trauma',     'desc'=>'Acute fracture management, ORIF, intramedullary nailing, and complex polytrauma care.'],
+        ['icon'=>'fa-spine',           'title'=>'Spine Surgery',             'desc'=>'Disc herniation, spinal stenosis, scoliosis, and minimally invasive spine procedures.'],
+        ['icon'=>'fa-child-reaching',  'title'=>'Paediatric Orthopedics',   'desc'=>'Clubfoot, developmental hip dysplasia, scoliosis, and limb deformity correction in children.'],
+    ],
+    'steps' => [
+        ['title'=>'Ortho Consultation',  'desc'=>'Clinical assessment, X-ray review, and diagnosis of your musculoskeletal problem.'],
+        ['title'=>'Imaging & Tests',     'desc'=>'MRI, CT scan, or bone density scan as required for precise diagnosis.'],
+        ['title'=>'Treatment Decision',  'desc'=>'Conservative management (physiotherapy, injections) or surgical planning.'],
+        ['title'=>'Surgery / Procedure', 'desc'=>'State-of-the-art OT with computer-navigation for joint replacements.'],
+        ['title'=>'Physiotherapy & Rehab','desc'=>'Structured rehabilitation programme to restore full strength and function.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-bone',           'label'=>'Osteoarthritis'],
+        ['icon'=>'fa-person-falling', 'label'=>'Fractures & Trauma'],
+        ['icon'=>'fa-circle-dot',     'label'=>'Ligament & Tendon Tears'],
+        ['icon'=>'fa-spine',          'label'=>'Disc Prolapse / Back Pain'],
+        ['icon'=>'fa-person-running', 'label'=>'Sports Injuries'],
+        ['icon'=>'fa-arrows-up-to-line','label'=>'Scoliosis'],
+        ['icon'=>'fa-shield',         'label'=>'Osteoporosis'],
+        ['icon'=>'fa-hands',          'label'=>'Carpal Tunnel Syndrome'],
+        ['icon'=>'fa-child',          'label'=>'Flat Feet / Clubfoot'],
+        ['icon'=>'fa-circle',         'label'=>'Shoulder / Knee Arthritis'],
+    ],
+    'testimonials' => [
+        ['text'=>'"I had a bilateral knee replacement at 58. Within 3 months I was hiking again. The surgical team and physios at SmartCare are exceptional."', 'name'=>'Colonel R. Singh (Retd)', 'role'=>'Pune', 'init'=>'R'],
+        ['text'=>'"ACL reconstruction done arthroscopically. I was playing cricket again in 9 months. The sports medicine team understood my goal from day one."', 'name'=>'Arjun Thakur', 'role'=>'Club Cricketer, Nasik', 'init'=>'A'],
+        ['text'=>'"My mother\'s hip replacement was worry-free. The team walked our whole family through every step. She was walking without help in 6 weeks."', 'name'=>'Pooja Verma', 'role'=>'Teacher, Delhi', 'init'=>'P'],
+    ],
+    'faqs' => [
+        ['q'=>'How long is recovery after a knee replacement?', 'a'=>'Most patients walk with support the next day. Return to daily activities takes 6–8 weeks. Full recovery with physiotherapy takes 3–6 months.'],
+        ['q'=>'Is there an age limit for joint replacement?', 'a'=>'No strict age limit. Decisions are based on lifestyle, pain severity, and overall health. Many patients in their 70s–80s undergo successful replacements.'],
+        ['q'=>'Can physiotherapy alone cure arthritis?', 'a'=>'Physiotherapy can significantly reduce pain and improve function in mild to moderate arthritis. Advanced arthritis with severe joint damage usually requires surgical intervention.'],
+        ['q'=>'What is the difference between arthroscopy and open surgery?', 'a'=>'Arthroscopy uses small key-hole incisions with a camera. Benefits include smaller scars, less blood loss, lower infection risk, and faster recovery compared to traditional open surgery.'],
+    ],
+];
+include '../../Includes/service_page.php';

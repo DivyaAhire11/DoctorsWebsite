@@ -33,14 +33,12 @@ $notifs = pg_query_params($con,
     [$userId]);
 $notifCount = $notifs ? pg_num_rows($notifs) : 0;
 
-// Doctors list for search
-// Doctors list — try fetching photo column, fallback if column doesn't exist
-$doctorsResult = pg_query($con, "SELECT id, name, specialization, fee, photo FROM doctors WHERE status='approved' ORDER BY name");
-if (!$doctorsResult) {
-    // photo column may not exist yet — fetch without it
-    $doctorsResult = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHERE status='approved' ORDER BY name");
+// Doctors list — try with photo column first, silently fall back if column doesn't exist
+$doctors = @pg_query($con, "SELECT id, name, specialization, fee, photo FROM doctors WHERE status='approved' ORDER BY name");
+if (!$doctors) {
+    // photo column doesn't exist yet — fetch without it
+    $doctors = pg_query($con, "SELECT id, name, specialization, fee FROM doctors WHERE status='approved' ORDER BY name");
 }
-$doctors = $doctorsResult;
 ?>
 <!DOCTYPE html>
 <html lang="en">

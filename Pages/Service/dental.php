@@ -1,102 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dental Care Service</title>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-tooth"></i> Dental Care</h1>
-    <p>Comprehensive oral health care for all ages</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/dentist-examining-patient-s-teeth.jpg" alt="Dental Care">
-    </div>
-
-    <div class="service-info">
-      <h2>Expert Dental Treatments</h2>
-      <p>
-        Our Dental Department provides full oral care including routine checkups, professional cleaning, fillings,
-        gum disease treatment, and emergency dental care. We focus on preventive care and long-term oral health.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>24/7</span>
-      <p>Emergency Care</p>
-    </div>
-    <div>
-      <span>10+</span>
-      <p>Years of Experience</p>
-    </div>
-    <div>
-      <span>5k+</span>
-      <p>Patients Treated</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Routine dental checkups and cleaning</li>
-        <li>Fillings, crowns, and bridges</li>
-        <li>Gum disease and oral infection treatment</li>
-        <li>Emergency dental care</li>
-        <li>Patient dental records management</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-tooth"></i>
-          <p>Oral health evaluation</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Professional dentist guidance</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-stethoscope"></i>
-          <p>Comprehensive checkups</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Customized treatment plan</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-calendar-check"></i>
-          <p>Easy appointment management</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Dental Care',
+    'tagline'     => 'Complete Oral Health & Smile Design',
+    'description' => 'Our Dental department offers comprehensive oral healthcare from routine check-ups and fillings to advanced cosmetic smile design and dental implants. Our team of specialists ensures a pain-free, confident smile for every patient.',
+    'heroImage'   => '../../images/Doctors/dentist-examining-patient-s-teeth.jpg',
+    'icon'        => 'fa-tooth',
+    'badge'       => 'Dental & Maxillofacial Department',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Digital Dentistry Centre',
+    'stats' => [
+        ['12k+','Smiles Transformed'],
+        ['8+',   'Dental Specialists'],
+        ['99%',  'Patient Comfort Score'],
+        ['500+', 'Implants Placed'],
+    ],
+    'features' => [
+        'Painless dentistry with advanced anaesthesia techniques',
+        'Digital X-ray and 3D cone beam CT imaging',
+        'Same-day crowns with CAD/CAM technology',
+        'Cosmetic smile design and teeth whitening',
+        'Dental implants with 10-year guarantee',
+        'Orthodontics — braces and Invisalign',
+    ],
+    'services' => [
+        ['icon'=>'fa-tooth',           'title'=>'Dental Implants',           'desc'=>'Titanium implants with ceramic crowns that look and function like natural teeth. Lifetime solutions.'],
+        ['icon'=>'fa-smile',           'title'=>'Smile Design / Veneers',    'desc'=>'Porcelain veneers, bonding, and full smile makeover using digital smile design software.'],
+        ['icon'=>'fa-align-center',    'title'=>'Orthodontics',              'desc'=>'Traditional braces, clear aligners (Invisalign), and lingual braces for all ages.'],
+        ['icon'=>'fa-circle-half-stroke','title'=>'Teeth Whitening',         'desc'=>'Professional in-chair and take-home whitening systems for visibly whiter teeth in days.'],
+        ['icon'=>'fa-teeth',           'title'=>'Root Canal Treatment',      'desc'=>'Single-sitting rotary root canal therapy — painless, fast, and tooth-saving.'],
+        ['icon'=>'fa-person-chalkboard','title'=>'Paediatric Dentistry',      'desc'=>'Child-friendly dental care including sealants, fluoride, and habit correction.'],
+    ],
+    'steps' => [
+        ['title'=>'Dental Consultation',  'desc'=>'Comprehensive oral examination, digital X-rays, and discussion of your dental goals.'],
+        ['title'=>'Treatment Planning',   'desc'=>'Personalised multi-step treatment plan with transparent cost breakdown.'],
+        ['title'=>'Preparatory Work',     'desc'=>'Cleaning, extractions, or gum treatment as needed before major procedures.'],
+        ['title'=>'Main Procedure',       'desc'=>'Carried out by a specialist in our fully equipped, sterile dental suites.'],
+        ['title'=>'Review & Maintenance', 'desc'=>'6-monthly check-ups and cleaning to maintain your results long-term.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-teeth-open',        'label'=>'Tooth Decay / Cavities'],
+        ['icon'=>'fa-circle-dot',        'label'=>'Gum Disease (Periodontitis)'],
+        ['icon'=>'fa-tooth',             'label'=>'Missing Teeth'],
+        ['icon'=>'fa-face-grimace',      'label'=>'Toothache / Sensitivity'],
+        ['icon'=>'fa-align-center',      'label'=>'Crooked / Misaligned Teeth'],
+        ['icon'=>'fa-circle',            'label'=>'Teeth Grinding (Bruxism)'],
+        ['icon'=>'fa-child-reaching',    'label'=>'Paediatric Dental Issues'],
+        ['icon'=>'fa-circle-half-stroke','label'=>'Discoloured Teeth'],
+        ['icon'=>'fa-face-tired',        'label'=>'Oral Ulcers / Infections'],
+        ['icon'=>'fa-triangle-exclamation','label'=>'Jaw Pain (TMJ Disorder)'],
+    ],
+    'testimonials' => [
+        ['text'=>'"I was terrified of dentists all my life. SmartCare\'s team was so gentle — I barely felt the implant procedure. Now I have 4 implants and a beautiful smile!"', 'name'=>'Sunita Bhat', 'role'=>'Bank Manager, Pune', 'init'=>'S'],
+        ['text'=>'"Invisalign treatment for 14 months and my teeth are perfectly straight. The team checked up on me every month and kept me motivated."', 'name'=>'Yash Shah', 'role'=>'College Student, Mumbai', 'init'=>'Y'],
+        ['text'=>'"Root canal on a Saturday afternoon — no pain, single sitting, back to work by Monday. The technology here is incredible."', 'name'=>'Dinesh Kumar', 'role'=>'Software Developer, Hyderabad', 'init'=>'D'],
+    ],
+    'faqs' => [
+        ['q'=>'Is root canal treatment painful?', 'a'=>'With modern anaesthesia and rotary instrumentation, root canal treatment today is no more uncomfortable than a regular filling. Most patients are surprised by how comfortable it is.'],
+        ['q'=>'How long do dental implants last?', 'a'=>'With proper care and regular check-ups, dental implants can last a lifetime. The crown may need replacement after 15–20 years depending on wear.'],
+        ['q'=>'At what age should children first see a dentist?', 'a'=>'The first visit should be when the first tooth appears, or by age 1. Early visits set the foundation for a lifetime of good oral health.'],
+        ['q'=>'How white can my teeth get with professional whitening?', 'a'=>'Professional whitening can lighten teeth by 4–8 shades in one in-chair session. Results vary by tooth type and original shade. We will give you a realistic expectation at consultation.'],
+    ],
+];
+include '../../Includes/service_page.php';

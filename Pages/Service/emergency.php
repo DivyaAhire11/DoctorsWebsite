@@ -1,101 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emergency Care Service</title>
-  <!-- Font Awesome CDN for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="../../Style/pages/department.css">
-</head>
-
-<body>
-
-<main class="page">
-
-  <!-- Header -->
-  <header class="page-header">
-    <h1><i class="fas fa-ambulance"></i> Emergency Care</h1>
-    <p>Round-the-clock medical support for critical conditions</p>
-  </header>
-
-  <!-- Main Service Section -->
-  <section class="service-section">
-
-    <div class="service-image">
-      <img src="../../images/Doctors/emergency.jpg" alt="Emergency Care">
-    </div>
-
-    <div class="service-info">
-      <h2>Immediate Medical Response</h2>
-      <p>
-        Our Emergency Care Department provides 24/7 medical services for patients requiring urgent attention due to accidents, sudden illness, or critical conditions. We ensure rapid assessment, immediate treatment, and coordinated care by doctors, nurses, and support staff.
-      </p>
-      <a href="../../Pages/bookAppoint.php" class="cta">Schedule Consultation</a>
-    </div>
-
-  </section>
-
-  <!-- Highlights / Stats -->
-  <section class="highlights">
-    <div>
-      <span>24/7</span>
-      <p>Immediate Response</p>
-    </div>
-    <div>
-      <span>20+</span>
-      <p>Years of Emergency Care</p>
-    </div>
-    <div>
-      <span>12k+</span>
-      <p>Patients Treated</p>
-    </div>
-  </section>
-
-  <!-- Scope of Services with icons -->
-  <section class="details with-icons">
-    <h2>Scope of Services</h2>
-    <div class="details-grid">
-      <ul class="details-list">
-        <li>Rapid patient assessment and triage</li>
-        <li>Immediate treatment of accidents and injuries</li>
-        <li>Critical illness management</li>
-        <li>Continuous monitoring and support</li>
-        <li>Coordination between medical teams</li>
-      </ul>
-
-      <div class="details-icons">
-        <div class="icon-item">
-          <i class="fas fa-ambulance"></i>
-          <p>Emergency transport & care</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-user-md"></i>
-          <p>Expert emergency physicians</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-stethoscope"></i>
-          <p>Advanced monitoring equipment</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-notes-medical"></i>
-          <p>Personalized urgent care plan</p>
-        </div>
-        <div class="icon-item">
-          <i class="fas fa-clock"></i>
-          <p>24/7 availability</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Navigation -->
-  <nav class="breadcrumb">
-    <a href="services.php"><i class="fa-solid fa-arrow-left"></i> Back to Services</a>
-  </nav>
-
-</main>
-
-</body>
-</html>
+<?php
+$svc = [
+    'title'       => 'Emergency Care',
+    'tagline'     => '24/7 Critical & Trauma Emergency Services',
+    'description' => 'Our Emergency department operates 24 hours a day, 7 days a week, with a dedicated trauma bay, resuscitation room, and specialist on-call system. We are equipped to handle every medical emergency — from accidents to cardiac arrest — with speed and precision.',
+    'heroImage'   => '../../images/Doctors/emergency.jpg',
+    'icon'        => 'fa-truck-medical',
+    'badge'       => 'Emergency & Trauma Department',
+    'color'       => '#0d7377',
+    'colorLight'  => '#e6f7f7',
+    'imgBadge'    => '✓ Level 1 Trauma Centre',
+    'stats' => [
+        ['24/7', 'Round-the-Clock Care'],
+        ['< 5min','Triage Response Time'],
+        ['30+',  'Emergency Specialists'],
+        ['98%',  'Survival Rate'],
+    ],
+    'features' => [
+        '24/7 emergency triage with 5-minute response time',
+        'Dedicated polytrauma bay and resuscitation room',
+        'On-call specialists across all major specialties',
+        'Advanced life support and ventilator capability',
+        'Fast-track emergency imaging (CT, X-ray, USG)',
+        'Direct escalation to ICU, OT, or cath lab',
+    ],
+    'services' => [
+        ['icon'=>'fa-heart-crack',       'title'=>'Cardiac Emergencies',      'desc'=>'STEMI door-to-balloon < 60 min, defibrillation, CPR, and cardiac resuscitation protocols.'],
+        ['icon'=>'fa-person-falling',    'title'=>'Trauma & Accidents',       'desc'=>'Polytrauma management with ATLS protocol, haemostasis, and emergency surgery.'],
+        ['icon'=>'fa-brain',             'title'=>'Stroke Response',          'desc'=>'Stroke code activation with CT, thrombolysis, and neuro-intervention within 45 minutes.'],
+        ['icon'=>'fa-lungs-virus',       'title'=>'Respiratory Emergencies',  'desc'=>'Severe asthma, COPD exacerbation, pulmonary embolism, and respiratory failure management.'],
+        ['icon'=>'fa-child',             'title'=>'Paediatric Emergency',     'desc'=>'Dedicated paediatric emergency bay with child-specific protocols and weight-based dosing.'],
+        ['icon'=>'fa-virus',             'title'=>'Sepsis & Infections',      'desc'=>'Sepsis bundle activation, early antibiotics, and organ support for life-threatening infections.'],
+    ],
+    'steps' => [
+        ['title'=>'Arrival & Triage',    'desc'=>'Immediate triage by a trained nurse within 2 minutes using the MTS system.'],
+        ['title'=>'Stabilisation',       'desc'=>'ABC approach — airway, breathing, and circulation secured immediately.'],
+        ['title'=>'Diagnostics',         'desc'=>'Point-of-care tests, emergency imaging, and specialist consultation.'],
+        ['title'=>'Definitive Treatment','desc'=>'Medical management, interventional procedure, or emergency surgery.'],
+        ['title'=>'Admission / Discharge','desc'=>'ICU, ward admission, or safe discharge with follow-up plan.'],
+    ],
+    'conditions' => [
+        ['icon'=>'fa-heart-crack',       'label'=>'Heart Attack / STEMI'],
+        ['icon'=>'fa-brain',             'label'=>'Stroke'],
+        ['icon'=>'fa-person-falling',    'label'=>'Accidents & Polytrauma'],
+        ['icon'=>'fa-face-dizzy',        'label'=>'Unconsciousness / Collapse'],
+        ['icon'=>'fa-lungs',             'label'=>'Breathing Difficulty'],
+        ['icon'=>'fa-droplet',           'label'=>'Diabetic Emergency'],
+        ['icon'=>'fa-skull-crossbones',  'label'=>'Poisoning / Overdose'],
+        ['icon'=>'fa-fire',              'label'=>'Burns & Chemical Injuries'],
+        ['icon'=>'fa-baby',              'label'=>'Obstetric Emergencies'],
+        ['icon'=>'fa-bolt',              'label'=>'Seizures / Status Epilepticus'],
+    ],
+    'testimonials' => [
+        ['text'=>'"My husband was brought in with a heart attack at 2 AM. The team saved his life — door to balloon time was under 50 minutes. We are forever grateful."', 'name'=>'Geeta Mohan', 'role'=>'Homemaker, Nagpur', 'init'=>'G'],
+        ['text'=>'"My daughter\'s anaphylaxis was managed within minutes of arrival. The paediatric ER team was calm, fast, and incredibly reassuring for us parents."', 'name'=>'Sachin Pawar', 'role'=>'IT Professional, Pune', 'init'=>'S'],
+        ['text'=>'"Admitted after a road accident with multiple injuries. The emergency and surgical teams worked seamlessly. Excellent coordination and care."', 'name'=>'Rohan Yadav', 'role'=>'Teacher, Nashik', 'init'=>'R'],
+    ],
+    'faqs' => [
+        ['q'=>'When should I call an ambulance vs. drive to the ER?', 'a'=>'Call an ambulance for chest pain, stroke symptoms, major accidents, unconsciousness, or severe breathing difficulty. For ambulance, dial 108. Driving to ER is acceptable for less severe emergencies.'],
+        ['q'=>'What is a triage system?', 'a'=>'Triage is the process of sorting patients by urgency. Red (immediate) patients are seen within seconds, orange within 10 minutes, yellow within 30 minutes, and green as soon as possible.'],
+        ['q'=>'Does the emergency department operate on holidays?', 'a'=>'Our Emergency department is fully staffed 24 hours a day, 365 days a year including all public holidays, weekends, and festivals.'],
+        ['q'=>'What should I bring to the ER?', 'a'=>'Bring any available medical records, a list of medications, and ID/insurance card if possible. If the situation is critical, focus on getting to the hospital — paperwork can wait.'],
+    ],
+];
+include '../../Includes/service_page.php';
